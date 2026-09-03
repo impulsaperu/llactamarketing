@@ -1,144 +1,368 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.C12lZ9DL.js","assets":"assets.8Gk803W0.js","comments":"comments.vw5vQdGA.js","db":"db.h-3sndFg.js","downloads":"downloads.Cqv48mdo.js","embed":"embed.eqL6deQM.js","endpoints":"endpoints.CfzSv5nM.js","mcp":"mcp.Bvma3qD7.js","network":"network.B5UA9Su4.js","permissions":"permissions.BNySkLV5.js","room":"room.VSdFwTE9.js","sample":"sample.BW2Uysoh.js","self":"artifact.C12lZ9DL.js","user":"user.BpKav-Rf.js"},"transforms":"_transforms.DSB5x63f.js","comments":"_comments.lsIZQbAK.js","translate":"_translate.5HCW4BJh.js"}</script><script>(function(){"use strict";var te=["light","dark","system"],re=/^[A-Za-z0-9_-]{1,64}$/,$=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,ne=new Set(["class","hidden","value","checked","style","title","alt","placeholder","lang","dir","role","tabindex","disabled","readonly","contenteditable","open","colspan","rowspan"]);function oe(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||ne.has(t)}var Be="http://www.w3.org/1999/xhtml",se="http://www.w3.org/2000/svg",ae=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),ie=new Set(["script","style"]);function ce(e){const t=e.localName.toLowerCase();return e.namespaceURI==="http://www.w3.org/1999/xhtml"?!ae.has(t):e.namespaceURI===se?!ie.has(t):!1}function M(e,t){return e===t||(e===160||e===32)&&(t===160||t===32)}function le(e,t){const r=e.length,n=t.length;let s=0;for(;s<r&&s<n&&M(e.charCodeAt(s),t.charCodeAt(s));)s++;let o=0;for(;o<r-s&&o<n-s&&M(e.charCodeAt(r-1-o),t.charCodeAt(n-1-o));)o++;return{p:s,s:o}}function ue(e,t){const r=e.firstChild;if(e.childNodes.length!==1||r===null||r.nodeType!==Node.TEXT_NODE){e.textContent=t;return}const n=r.data,s=n.length,o=t.length,{p:i,s:c}=le(n,t);i===s&&c===0&&s===o||r.replaceData(i,s-i-c,t.slice(i,o-c));const h=r.data,p=e.ownerDocument.getSelection?.()??null,w=p!==null&&p.rangeCount>0&&(p.anchorNode===r||p.focusNode===r)?{anchor:p.anchorNode,anchorOffset:p.anchorOffset,focus:p.focusNode,focusOffset:p.focusOffset}:null;let m=-1,g=-1;for(let f=0;f<h.length&&f<t.length;f++){const v=h.charCodeAt(f),b=t.charCodeAt(f);v!==b&&M(v,b)&&(m<0&&(m=f),g=f)}const a=m>=0;if(a&&r.replaceData(m,g-m+1,t.slice(m,g+1)),a&&w!==null&&w.anchor!==null&&w.focus!==null)try{p.setBaseAndExtent(w.anchor,w.anchorOffset,w.focus,w.focusOffset)}catch{}}var fe=new Set(["html","head","body","frameset"]);function de(e){return e.namespaceURI==="http://www.w3.org/1999/xhtml"&&fe.has(e.localName)}function pe(e){if(e===null||typeof e!="object")return!1;const t=e;if(typeof t.target!="string"||!re.test(t.target)||t.text!==void 0&&typeof t.text!="string")return!1;if(t.attrsSet!==void 0){if(t.attrsSet===null||typeof t.attrsSet!="object")return!1;for(const[r,n]of Object.entries(t.attrsSet))if(!$.test(r)||typeof n!="string")return!1}if(t.attrsRemoved!==void 0){if(!Array.isArray(t.attrsRemoved))return!1;for(const r of t.attrsRemoved)if(typeof r!="string"||!$.test(r))return!1}return!0}function me(e,t){if(e===null||typeof e!="object")return!1;const{seq:r,elements:n}=e;if(typeof r!="number"||!Number.isSafeInteger(r)||!Array.isArray(n)||n.length===0||n.length>64)return!1;for(let s=0;s<n.length;s++)if(!t(n[s]))return!1;return!0}function he(e){return e===null||typeof e!="object"?!1:me(e.__frame_patch,pe)}function _e(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function ve(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function ye(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const r=t.theme;return typeof r=="string"&&te.includes(r)}var A=/^[\w.-]+\.js$/;function we(e,t,r){return r?"inert":typeof t=="string"&&A.test(t)?e?[t]:"inert":e?"inert":"framed"}function ge(){return{post(e,t){parent.postMessage(e,t)},on(e){const t=r=>{r.source===parent&&e(r.data,r.origin,r.isTrusted)};return addEventListener("message",t),()=>removeEventListener("message",t)}}}function be(){return{post:()=>{},on:()=>()=>{}}}var j="__frame_scroll",Ee=150,Ae=310,Se=160,Te=3e4;function ke(){let e=0,t=!1,r=!1,n=!1,s=0,o=null;const i=l=>{try{sessionStorage.setItem(j,JSON.stringify({y:l}))}catch{}},c=()=>{if(clearTimeout(e),o===null)return;const l=o;o=null,i(l)},h=()=>{if(t){t=!1;return}r=!0,o=scrollY,clearTimeout(e),e=setTimeout(c,Ee)};try{addEventListener("scroll",h,{passive:!0}),addEventListener("pagehide",c)}catch{}const p=()=>{let l;try{l=sessionStorage.getItem(j)}catch{return null}if(l===null)return null;let _;try{_=JSON.parse(l)}catch{_=null}const d=_?.y;if(!(typeof d=="number"&&Number.isFinite(d)&&d>=0)){try{sessionStorage.removeItem(j)}catch{}return null}return d};let w=!1;const m=l=>{try{const _=scrollY;scrollTo({top:l,left:0,behavior:"instant"}),s=l,n=!0,clearTimeout(e),o=null,i(l);const d=scrollY;d!==_&&(t=!0),d!==l&&!w&&(w=!0,addEventListener("load",()=>{try{if(scrollY===d){const T=p();m(T!==null?T:s)}}catch{}},{once:!0}))}catch{}},g=()=>{try{return!!location.hash}catch{return!0}};let a=!1;const f=()=>{try{if(a||innerWidth>Ae||innerHeight>Se)return;a=!0;const l=Date.now(),_=()=>{try{removeEventListener("resize",_)}catch{}if(Date.now()-l>Te||r||g())return;const d=p();m(d!==null?d:s)};addEventListener("resize",_)}catch{}};let v=!1,b=!1;return{restore(){if(v||(v=!0,g()))return;const l=p();l!==null&&(m(l),f())},promoted(){if(b||(b=!0,g()))return;const l=p();l!==null?(m(l),f()):n&&m(s)}}}function Re(e,t,r,n){let s=null;try{s=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:h=>h})??null}catch{}const o=window.Worker,i=o?.prototype,c=Object.freeze({Worker:o,workerOn:i?.addEventListener,workerPost:i?.postMessage,workerTerminate:i?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,policy:s,origins:t});r(e).then(h=>h?.bootTopLevel?h.bootTopLevel(c,n):n.settle()).catch(()=>n.settle())}var De="modulepreload",Ie=function(e){return"/"+e},Ue={},Le=function(t,r,n){let s=Promise.resolve();function o(i){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=i,window.dispatchEvent(c),!c.defaultPrevented)throw i}return s.then(i=>{for(const c of i||[])c.status==="rejected"&&o(c.reason);return t().catch(o)})},Oe=window===top,q=Object.getOwnPropertyDescriptor(window,"claude"),k=we(Oe,window.__FRAME_PREAMBLE?.topLevel,q?.writable===!1),N=typeof k=="object"&&k[0],y=N?be():ge();(function(){const e=Object.defineProperty,t=globalThis,r=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let n=0;for(let s=0;s<r.length;s++){const o=r[s];try{e(t,o,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[o]}catch{}try{e(t,o,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[o]=="function"&&n++}if(n&&k==="framed")try{y.post({__frame_rtc_lockdown_failed:n},"*")}catch{}})();var Pe=1e4,Y=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function X(e){for(const t of Y)if(t.endsWith(":*"))try{const r=new URL(e);if(`${r.protocol}//${r.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var R=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),B=window.__FRAME_PREAMBLE?.transforms,D=window.__FRAME_PREAMBLE?.comments,I=window.__FRAME_PREAMBLE?.translate;function S(e){return Le(()=>import("/_runtime/"+e),void 0)}function G(e,t){return{contract:e.contract,changes:new Set(e.changes??[]),flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:new Map,shellOrigin:t,mount:x,hooks:O,pipe:()=>({wrap:(r,n)=>(...s)=>{try{return n(...s)}catch(o){return Promise.reject(o)}}})}}var L=null,E=null;function V(e,t,r){try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var U=!1,O={editBefore:null,edit:null};function Ce(e,t,r=!1){const n=[];let s;if(r)try{O.editBefore?.(e)}catch{}for(const o of e.elements){const i=document.querySelector(`[data-id="${o.target}"]`);if(!i){s=o.target;break}if([...Object.keys(o.attrsSet??{}),...o.attrsRemoved??[]].some(c=>!oe(c))){s=o.target;break}if(o.text!==void 0&&(!ce(i)||de(i))){s=o.target;break}for(const[c,h]of Object.entries(o.attrsSet??{}))if(!J(i,c)){try{i.setAttribute(c,h)}catch{}Z(i,c,h)}for(const c of o.attrsRemoved??[])J(i,c)||(i.removeAttribute(c),Z(i,c,null));typeof o.text=="string"&&ue(i,o.text),n.push(o.target)}if(r)try{O.edit?.(e.seq,n,s)}catch{}if(s!==void 0){y.post({__frame_patch_miss:{seq:e.seq}},t);return}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:n}}))}catch{}}function Z(e,t,r){if(!(e instanceof HTMLInputElement))return;const n=t.toLowerCase();n==="checked"?e.checked=r!==null:n==="value"&&e.type!=="file"&&(e.value=r??"")}function J(e,t){const r=t.toLowerCase(),n=e;return r==="data-id"||(r==="value"||r==="checked")&&(n.__artifactSecret===!0||/^(password|hidden|file)$/.test(n.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${e.getAttribute("autocomplete")??""} ${n.autocomplete??""}`))}function Q(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,U=!0):U&&(delete t.dataset.theme,t.style.colorScheme="",U=!1)}var P=new Map;function Me(){let e;const t={u:new Promise(r=>{e=r}),r:r=>{t.done=!0,e(r)},done:!1,nulled:!1};return t}function F(){for(const e of P.values())e.done||(e.nulled=!0,e.r(null))}var je=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),x=(e,t)=>{const r=P.get(e);if(!r||r.done){r?.nulled&&E&&y.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:e}},E);return}const n=typeof t=="function"?Object.setPrototypeOf(t,je):Object.assign(Object.create(null),t);typeof n.then=="function"&&delete n.then,r.r(Object.freeze(n))};function ee(){const e=q?.value??{};V(window,"claude",e);for(const t of Object.keys(R)){if(e[t]!==void 0){V(e,t,e[t]);continue}P.set(t,Me())}if(e.use===void 0){const t=r=>{if(typeof r!="string"||!Object.hasOwn(R,r))return Promise.resolve(null);const n=P.get(r);return n?n.u:Promise.resolve(e[r]??null)};try{Object.defineProperty(e,"use",{value:t,writable:!0,configurable:!0,enumerable:!1})}catch{}}}if(k==="framed"){const e=B&&A.test(B)?S(B).catch(()=>{}):Promise.resolve(void 0),t=a=>{if(a.type==="auxclick"&&a.button!==1)return;const f=a.target,v=f&&f.closest?f.closest("a[href],area[href]"):null;if(!v)return;const b=v.getAttribute("href");if(!b)return;let l;try{l=new URL(b,document.baseURI)}catch{return}if((l.protocol==="http:"||l.protocol==="https:")&&l.origin!==location.origin){a.preventDefault();const _=(v.getAttribute("target")??"").toLowerCase(),d=a.type==="auxclick"||a.metaKey||a.ctrlKey||a.shiftKey||a.altKey||!["","_self","_top","_parent"].includes(_);y.post({__frame_nav:!0,url:l.href,newTab:d},"*")}};addEventListener("click",t,!0),addEventListener("auxclick",t,!0);const r={},n=a=>{a.isTrusted&&(r.pointer=!0)},s=a=>{a.isTrusted&&(r.click=!0)};addEventListener("pointermove",n,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0}),e.then(a=>{a?.wireNav&&(a.wireNav(),removeEventListener("click",t,!0),removeEventListener("auxclick",t,!0),removeEventListener("pointermove",n,!0),removeEventListener("click",s,!0),a.wireEngagement?.(r))});let o=null;try{o=ke()}catch{}ee();let i=null,c=null,h=0;const p=y.on((a,f)=>{X(f)&&_e(a)&&(i=a.__frame_init,E=f,p(),clearTimeout(h),c?.())});y.post({__frame_connect:!0},"*");const w=new Promise(a=>{c=a,h=setTimeout(()=>{p(),a()},Pe)}),m=document.readyState==="loading"?new Promise(a=>document.addEventListener("DOMContentLoaded",()=>a(),{once:!0})):Promise.resolve();m.then(()=>{try{o?.restore()}catch{}});const g={cb:null};y.on((a,f)=>{if(X(f)&&ve(a)){try{o?.promoted()}catch{}g.cb?.()}}),w.then(async()=>{if(!i||!E){F();return}Q(i.theme);const a=E;let f=!1,v=!1;y.on((u,z,C)=>{if(z!==a)return;ye(u)&&Q(u.__frame_theme.theme),he(u)&&Ce(u.__frame_patch,a,C);const H=u?.__fc_mode;H&&typeof H=="object"&&!f&&D&&A.test(D)&&(f=!0,S(D).then(K=>K.install?.(a,H.on===!0)).catch(()=>{}));const W=u?.__ft_cmd;W&&typeof W=="object"&&!v&&I&&A.test(I)&&(v=!0,S(I).then(K=>K.install?.(a,W)).catch(()=>{}))});const b=Object.keys(i.capabilities??{}).filter(u=>Object.hasOwn(R,u)).map(u=>[u,R[u]]).filter(u=>typeof u[1]=="string"&&A.test(u[1])),l=await Promise.allSettled(b.map(([,u])=>S(u))),_=await e,d=E;if(_?.buildBoot||y.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},d),_?.buildBoot)try{L=_.buildBoot(i,_.TRANSFORMS??{},{shellOrigin:d,mount:x,hooks:O},u=>y.post({__frame_cap_telemetry:u},d))}catch{y.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},d),L=G(i,d)}else L=G(i,d);const T=u=>y.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:u}},d),Ne=L;l.forEach((u,z)=>{const C=b[z][0];if(u.status!=="fulfilled"){T(C);return}try{u.value?.install?.(Ne)}catch{T(C)}}),F(),await m,y.post({__frame_ready:!0},E),e.then(u=>u?.installSizeReporter?.(d,g))})}else N&&(ee(),Re(N,Y,S,{settle:F,mount:x}))})();</script><!-- /frame-runtime -->
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Llacta Inmobiliaria — Estrategia Meta Ads</title>
+<title>Llacta Inmobiliaria — Estructura de Creativos Meta Ads</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#FBF8F4;color:#2C2418;font-family:'Inter',sans-serif;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
-/* HEADER — crema con letras negras */
-.site-header{background:#F5EFE6;border-bottom:2px solid #D4AA7A;padding:52px 32px 48px}
-.header-inner{max-width:900px;margin:auto}
-.header-brand{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8C6030;margin-bottom:14px}
-.header-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,46px);line-height:1.12;color:#1A1208;margin-bottom:14px}
-.header-sub{font-size:14px;color:#5C4020;max-width:580px;line-height:1.6}
-.header-chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
-.chip{background:#FFFFFF;border:1px solid #D4AA7A;border-radius:100px;padding:5px 14px;font-size:12px;font-weight:500;color:#7C4A1E}
+body {
+  background: #FBF8F4;
+  color: #2C2418;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
+.site-header {
+  background: #7C4A1E;
+  color: #FBF8F4;
+  padding: 48px 32px 44px;
+}
+.header-inner { max-width: 900px; margin: auto; }
+.header-brand {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(251,248,244,.55);
+  margin-bottom: 12px;
+}
+.header-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 38px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  color: #FBF8F4;
+}
+.header-sub { font-size: 14px; color: rgba(251,248,244,.7); max-width: 560px; }
+.header-chips { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: rgba(251,248,244,.12);
+  border: 1px solid rgba(251,248,244,.22);
+  border-radius: 100px;
+  padding: 4px 13px;
+  font-size: 12px;
+  color: rgba(251,248,244,.8);
+}
 
 /* NAV */
-.sticky-nav{position:sticky;top:0;z-index:50;background:#F5EFE6;border-bottom:1px solid #E0CDB0;padding:0 24px}
-.nav-inner{max-width:900px;margin:auto;display:flex;overflow-x:auto;scrollbar-width:none}
-.nav-inner::-webkit-scrollbar{display:none}
-.nav-tab{flex-shrink:0;padding:13px 16px;font-size:13px;font-weight:500;color:#8C6030;border-bottom:2px solid transparent;text-decoration:none;white-space:nowrap;transition:color .2s,border-color .2s}
-.nav-tab:hover{color:#2C2418}
-.nav-tab.active{color:#7C4A1E;border-bottom-color:#7C4A1E}
+.sticky-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: #F5EFE6;
+  border-bottom: 1px solid #E8DDD0;
+  padding: 0 24px;
+}
+.nav-inner {
+  max-width: 900px; margin: auto;
+  display: flex; overflow-x: auto; scrollbar-width: none;
+}
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav-tab {
+  flex-shrink: 0;
+  padding: 13px 16px;
+  font-size: 13px; font-weight: 500;
+  color: #8C7355;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .2s, border-color .2s;
+}
+.nav-tab:hover { color: #2C2418; }
+.nav-tab.active { color: #7C4A1E; border-bottom-color: #7C4A1E; }
 
-/* LAYOUT */
-.container{max-width:900px;margin:0 auto;padding:0 24px}
+/* CONTAINER */
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
 
-/* SECTION */
-.section-block{padding:52px 0 16px}
-.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#B07840;margin-bottom:8px}
-.section-h{font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,30px);line-height:1.2;color:#1A1208;margin-bottom:8px}
-.section-desc{font-size:14px;color:#6B5740;max-width:620px}
+/* SECTION HEADS */
+.section-block { padding: 48px 0 16px; }
+.eyebrow {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: #B07840; margin-bottom: 8px;
+}
+.section-h {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px; line-height: 1.2;
+  color: #2C2418; margin-bottom: 8px;
+}
+.section-desc { font-size: 14px; color: #6B5740; max-width: 620px; }
 
 /* PERSONA CARD */
-.persona-card{background:#FFFFFF;border:1px solid #E0CDB0;border-radius:12px;overflow:hidden;margin-bottom:52px}
-.persona-header{padding:22px 26px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid #F0E4D0}
-.persona-emoji{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
-.persona-name{font-family:'DM Serif Display',serif;font-size:20px;color:#1A1208;margin-bottom:6px}
-.ptag{display:inline-block;border-radius:100px;padding:3px 11px;font-size:11px;font-weight:600;margin-right:5px;margin-bottom:3px}
-.persona-body{padding:24px 26px}
+.persona-card {
+  background: #FFFFFF;
+  border: 1px solid #E8DDD0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 52px;
+}
+.persona-header {
+  padding: 22px 26px;
+  display: flex; align-items: flex-start; gap: 16px;
+  border-bottom: 1px solid #F0E8DD;
+}
+.persona-emoji {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; flex-shrink: 0;
+}
+.persona-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px; color: #2C2418;
+  margin-bottom: 6px;
+}
+.ptag {
+  display: inline-block;
+  border-radius: 100px;
+  padding: 3px 10px;
+  font-size: 11px; font-weight: 600;
+  margin-right: 5px; margin-bottom: 3px;
+}
+.persona-body { padding: 24px 26px; }
 
 /* PROFILE GRID */
-.pgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:28px}
-@media(max-width:640px){.pgrid{grid-template-columns:1fr}}
-.pinfo-label{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#B07840;margin-bottom:5px}
-.pinfo-text{font-size:13px;color:#5C4030;line-height:1.55}
+.pgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.pinfo-label {
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: #B07840; margin-bottom: 5px;
+}
+.pinfo-text { font-size: 13px; color: #5C4830; line-height: 1.55; }
 
-/* PAIN */
-.pain-header{display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:6px;border-left:3px solid;margin-bottom:12px}
-.pain-title{font-size:14px;font-weight:600;flex:1;color:#1A1208}
-.pain-badge{font-size:11px;padding:2px 9px;border-radius:100px;white-space:nowrap}
-.pain-desc{font-size:13px;color:#6B5740;margin-bottom:18px;line-height:1.55}
+/* PAIN BLOCK */
+.pain-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 18px;
+  border-radius: 6px;
+  border-left: 3px solid;
+  margin-bottom: 14px;
+}
+.pain-title { font-size: 14px; font-weight: 600; flex: 1; color: #2C2418; }
+.pain-desc { font-size: 13px; color: #6B5740; margin-bottom: 18px; line-height: 1.55; }
 
-/* CREATIVE GRID */
-.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-@media(max-width:600px){.cgrid{grid-template-columns:1fr}}
+/* CREATIVE GRID 2-col */
+.cgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.ccard {
+  background: #FBF8F4;
+  border: 1px solid #E8DDD0;
+  border-radius: 10px;
+  padding: 18px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.ccard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.cnum {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: #B07840; margin-bottom: 10px;
+}
+.format-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #FFFFFF;
+  border: 1px solid #E0D4C4;
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 11.5px; font-weight: 500;
+  color: #2C2418;
+  margin-bottom: 4px;
+}
+.angle-pill {
+  display: inline-flex; align-items: center;
+  font-size: 11px; font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-left: 5px;
+}
+.flabel {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: #B07840; margin-top: 12px; margin-bottom: 4px;
+}
+.fval { font-size: 13px; color: #2C2418; line-height: 1.5; }
+.hook-val {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic; font-size: 14px;
+  color: #2C2418; line-height: 1.4;
+  border-left: 2px solid #D4AA7A;
+  padding-left: 12px;
+  margin: 5px 0;
+}
+.cta-btn {
+  display: inline-block;
+  margin-top: 8px;
+  background: #7C4A1E;
+  color: #FBF8F4;
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-size: 12.5px; font-weight: 600;
+}
 
-.ccard{background:#FBF8F4;border:1px solid #E0CDB0;border-radius:10px;padding:18px 20px;position:relative;overflow:hidden}
-.ccard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+/* WIDE CARD (3 cols inside) */
+.ccard-wide {
+  background: #FBF8F4;
+  border: 1px solid #E8DDD0;
+  border-radius: 10px;
+  padding: 18px 22px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.ccard-wide::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.wide-header {
+  display: flex; align-items: center;
+  gap: 8px; flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.wide-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
 
-.cnum{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#B07840;margin-bottom:10px}
-.format-pill{display:inline-flex;align-items:center;gap:5px;background:#FFFFFF;border:1px solid #D4AA7A;border-radius:100px;padding:4px 12px;font-size:11.5px;font-weight:500;color:#2C2418}
-.angle-pill{display:inline-flex;align-items:center;font-size:11px;font-weight:500;padding:3px 10px;border-radius:100px;margin-left:5px;vertical-align:middle}
-.pills-row{margin-bottom:14px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-
-.flabel{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#B07840;margin-top:12px;margin-bottom:4px}
-.fval{font-size:13px;color:#2C2418;line-height:1.5}
-.hook-val{font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:#1A1208;line-height:1.4;border-left:2px solid #D4AA7A;padding-left:12px;margin:5px 0}
-.cta-btn{display:inline-block;margin-top:8px;background:#7C4A1E;color:#FBF8F4;padding:7px 16px;border-radius:6px;font-size:12.5px;font-weight:600}
-
-/* WIDE CARD */
-.ccard-wide{background:#FBF8F4;border:1px solid #E0CDB0;border-radius:10px;padding:20px 22px;position:relative;overflow:hidden;margin-bottom:14px}
-.ccard-wide::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.wide-header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.wide-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
-@media(max-width:640px){.wide-body{grid-template-columns:1fr}}
-
-hr.div{border:none;border-top:1px solid #E0CDB0;margin:28px 0}
+/* DIVIDER */
+hr.div { border: none; border-top: 1px solid #E8DDD0; margin: 28px 0; }
 
 /* ANGLE PILLS */
-.a-ps{background:#FEF3C7;color:#92400E}
-.a-tm{background:#FEE2D5;color:#9A3412}
-.a-ug{background:#FCE7F3;color:#9D174D}
-.a-ed{background:#D1FAE5;color:#065F46}
-.a-cp{background:#EDE9FE;color:#5B21B6}
-.a-ur{background:#FFE4E6;color:#9F1239}
+.a-ps  { background: #FEF3C7; color: #92400E; }
+.a-tm  { background: #FEE2D5; color: #9A3412; }
+.a-ug  { background: #FCE7F3; color: #9D174D; }
+.a-ed  { background: #D1FAE5; color: #065F46; }
+.a-cp  { background: #EDE9FE; color: #5B21B6; }
+.a-ur  { background: #FFE4E6; color: #9F1239; }
 
-/* PERSONA ACCENT — P1 copper */
-.p1e{background:#FDEFD8}.p1tag{background:#FDEAC0;color:#8C5010}
-.p1h{background:#FDF6ED}.p1bd{border-left-color:#C47830!important}
-.p1tp::before{background:#C47830}
+/* PERSONA COLORS */
+/* P1 copper */
+.p1e { background: #FDEFD8; }
+.p1t { color: #A0521A; }
+.p1bd { border-left-color: #C47830 !important; }
+.p1h { background: #FDF3E8; }
+.p1tp::before { background: #C47830; }
+.p1tag { background: #FDEAC0; color: #8C5010; }
 
-/* P2 slate */
-.p2e{background:#DBEAFE}.p2tag{background:#DBEAFE;color:#1E4E7A}
-.p2h{background:#EFF6FF}.p2bd{border-left-color:#3B82C4!important}
-.p2tp::before{background:#3B82C4}
+/* P2 slate blue */
+.p2e { background: #DBEAFE; }
+.p2t { color: #1E4E7A; }
+.p2bd { border-left-color: #3B82C4 !important; }
+.p2h { background: #EFF6FF; }
+.p2tp::before { background: #3B82C4; }
+.p2tag { background: #DBEAFE; color: #1E4E7A; }
 
 /* P3 sage */
-.p3e{background:#D1FAE5}.p3tag{background:#D1FAE5;color:#065F46}
-.p3h{background:#ECFDF5}.p3bd{border-left-color:#34A068!important}
-.p3tp::before{background:#34A068}
+.p3e { background: #D1FAE5; }
+.p3t { color: #065F46; }
+.p3bd { border-left-color: #34A068 !important; }
+.p3h { background: #ECFDF5; }
+.p3tp::before { background: #34A068; }
+.p3tag { background: #D1FAE5; color: #065F46; }
 
 /* P4 terracotta */
-.p4e{background:#FEE2D5}.p4tag{background:#FEE2D5;color:#9A3412}
-.p4h{background:#FFF7ED}.p4bd{border-left-color:#E06040!important}
-.p4tp::before{background:#E06040}
+.p4e { background: #FEE2D5; }
+.p4t { color: #9A3412; }
+.p4bd { border-left-color: #E06040 !important; }
+.p4h { background: #FFF7ED; }
+.p4tp::before { background: #E06040; }
+.p4tag { background: #FEE2D5; color: #9A3412; }
 
-/* P5 rose */
-.p5e{background:#FCE7F3}.p5tag{background:#FCE7F3;color:#831843}
-.p5h{background:#FDF2F8}.p5bd{border-left-color:#C0406A!important}
-.p5tp::before{background:#C0406A}
+/* P5 burgundy */
+.p5e { background: #FCE7F3; }
+.p5t { color: #831843; }
+.p5bd { border-left-color: #C0406A !important; }
+.p5h { background: #FDF2F8; }
+.p5tp::before { background: #C0406A; }
+.p5tag { background: #FCE7F3; color: #831843; }
 
 /* TABLE */
-.table-section{padding:48px 0 64px}
-.table-wrap{overflow-x:auto;border:1px solid #E0CDB0;border-radius:12px;background:#FFFFFF}
-table{width:100%;border-collapse:collapse;min-width:700px}
-thead{background:#7C4A1E}
-thead th{padding:12px 16px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#FBF8F4;text-align:left}
-tbody tr{border-top:1px solid #F0E4D0}
-tbody tr:nth-child(even){background:#FDFAF6}
-tbody td{padding:11px 16px;font-size:13px;color:#5C4030;vertical-align:top}
-tbody td strong{color:#1A1208;font-weight:600}
-.ta{display:inline-block;font-size:11px;padding:2px 8px;border-radius:100px;font-weight:500;margin-right:2px}
-.legend{margin-top:20px;display:flex;flex-wrap:wrap;gap:7px;align-items:center}
-.legend-lbl{font-size:12px;color:#8C6030;margin-right:4px}
+.table-section { padding: 48px 0 64px; }
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid #E8DDD0;
+  border-radius: 12px;
+  background: #FFFFFF;
+}
+table { width: 100%; border-collapse: collapse; min-width: 700px; }
+thead { background: #7C4A1E; }
+thead th {
+  padding: 12px 16px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: #FBF8F4; text-align: left;
+}
+tbody tr { border-top: 1px solid #F0E8DD; }
+tbody tr:nth-child(even) { background: #FDFAF6; }
+tbody td { padding: 11px 16px; font-size: 13px; color: #5C4830; vertical-align: top; }
+tbody td strong { color: #2C2418; font-weight: 600; }
+.ta {
+  display: inline-block;
+  font-size: 11px; padding: 2px 8px;
+  border-radius: 100px; font-weight: 500;
+  margin-right: 2px;
+}
+.legend { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+.legend-label { font-size: 12px; color: #8C7355; margin-right: 4px; }
 
-footer{padding:28px 24px;text-align:center;font-size:12px;color:#8C6030;border-top:1px solid #E0CDB0;background:#F5EFE6}
+footer {
+  padding: 28px 24px;
+  text-align: center;
+  font-size: 12px; color: #B07840;
+  border-top: 1px solid #E8DDD0;
+  background: #F5EFE6;
+}
+
+/* STATUS BADGES */
+.status-bar{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.status{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:.04em;text-transform:uppercase}
+.s-prod{background:#FEF9C3;color:#854D0E;border:1.5px solid #FCD34D}
+.s-done{background:#DCFCE7;color:#166534;border:1.5px solid #86EFAC}
+.s-pend{background:#F1F5F9;color:#94A3B8;border:1.5px solid #CBD5E1}
+.ccard.en-prod,.ccard-wide.en-prod{border-color:#FCD34D;background:#FFFDF0}
+.ccard.en-prod::before,.ccard-wide.en-prod::before{background:#F59E0B!important}
+.ts-prod{background:#FEF9C3;color:#854D0E;font-weight:700;border-radius:100px;padding:2px 10px;font-size:11px;white-space:nowrap}
+.ts-pend{color:#CBD5E1;font-size:11px}
+
+/* Print / PDF */
+@media print {
+  .sticky-nav { display: none; }
+  .persona-card { break-inside: avoid; }
+  .ccard, .ccard-wide { break-inside: avoid; }
+  body { font-size: 12px; }
+  .header-title { font-size: 28px; }
+}
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <div class="header-brand">Llacta Inmobiliaria — Meta Ads Strategy</div>
     <h1 class="header-title">Estructura de Creativos<br>para Algoritmo Andrómeda</h1>
-    <p class="header-sub">Departamento en Av. Larco 791, Miraflores, piso 9 · 79 m² · 2 dorm · 2 baños · S/280/noche · Campaña: Mensajes a WhatsApp</p>
+    <p class="header-sub">Departamento en Av. Larco 791, Miraflores, piso 9 · 79 m² · 2 dorm · 2 baños · S/280/noche<br>Campaña: Mensajes a WhatsApp</p>
     <div class="header-chips">
       <span class="chip">5 Buyer Personas</span>
       <span class="chip">10 Puntos de dolor</span>
@@ -149,6 +373,7 @@ footer{padding:28px 24px;text-align:center;font-size:12px;color:#8C6030;border-t
   </div>
 </header>
 
+<!-- NAV -->
 <nav class="sticky-nav">
   <div class="nav-inner">
     <a class="nav-tab" href="#p1">P1 — Pareja</a>
@@ -162,543 +387,834 @@ footer{padding:28px 24px;text-align:center;font-size:12px;color:#8C6030;border-t
 
 <div class="container">
 
-<!-- ═══ P1 PAREJA ═══ -->
+<!-- ══════════════════════════════
+     PERSONA 1 — PAREJA
+══════════════════════════════ -->
 <section id="p1" class="section-block">
   <div class="eyebrow">Buyer Persona 01</div>
   <h2 class="section-h">La Pareja que Busca la Escapada Perfecta</h2>
   <p class="section-desc">Parejas limeñas de 28–42 años que quieren romper la rutina sin salir de la ciudad. El creativo les habla de romance, no de metros cuadrados.</p>
 </section>
+
 <div class="persona-card">
   <div class="persona-header">
     <div class="persona-emoji p1e">💑</div>
     <div>
       <div class="persona-name">Valentina &amp; Rodrigo</div>
-      <span class="ptag p1tag">Parejas 28–42</span><span class="ptag p1tag">Lima Metropolitana</span><span class="ptag p1tag">NSE A/B</span>
+      <span class="ptag p1tag">Parejas 28–42</span>
+      <span class="ptag p1tag">Lima Metropolitana</span>
+      <span class="ptag p1tag">NSE A/B</span>
     </div>
   </div>
   <div class="persona-body">
     <div class="pgrid">
-      <div><div class="pinfo-label">Quiénes son</div><div class="pinfo-text">Pareja con trabajo estable, sin hijos o con hijos pequeños. Aman salir a cenar, viajan 2–3 veces al año y siguen cuentas de travel &amp; lifestyle en Instagram.</div></div>
-      <div><div class="pinfo-label">Qué les importa</div><div class="pinfo-text">La experiencia, no el precio. Buscan algo que se vea bien en foto, que tenga historia que contar y que les haga sentir que hicieron algo especial.</div></div>
-      <div><div class="pinfo-label">Dónde los encontrás</div><div class="pinfo-text">Instagram Reels, historias de restaurantes en Miraflores, grupos "planes en Lima", cuentas de turismo local y lifestyle peruano.</div></div>
+      <div>
+        <div class="pinfo-label">Quiénes son</div>
+        <div class="pinfo-text">Pareja con trabajo estable, sin hijos o con hijos pequeños. Aman salir a cenar, viajan 2–3 veces al año y siguen cuentas de travel &amp; lifestyle en Instagram.</div>
+      </div>
+      <div>
+        <div class="pinfo-label">Qué les importa</div>
+        <div class="pinfo-text">La experiencia, no el precio. Buscan algo que se vea bien en foto, que tenga historia que contar y que les haga sentir que hicieron algo especial.</div>
+      </div>
+      <div>
+        <div class="pinfo-label">Dónde los encontrás</div>
+        <div class="pinfo-text">Instagram Reels, historias de restaurantes en Miraflores, grupos "planes en Lima", cuentas de turismo local y lifestyle peruano.</div>
+      </div>
     </div>
 
-    <div class="pain-header p1h p1bd">
+    <!-- DOLOR 1.1 -->
+    <div class="pain-header p1h p1bd" style="border-left:3px solid #C47830">
       <span style="font-size:18px">😩</span>
       <span class="pain-title">Dolor 1 — Rutina que aplasta el romance</span>
-      <span class="pain-badge" style="background:#FEF3C7;color:#92400E">Ángulo emocional</span>
+      <span style="font-size:11px;color:#8C7355;background:#F5EFE6;padding:2px 9px;border-radius:100px">Ángulo emocional</span>
     </div>
-    <p class="pain-desc">La pareja quiere vivir algo diferente juntos pero los planes siempre terminan siendo lo mismo: delivery y Netflix. La promesa: <em>un fin de semana en Miraflores cambia eso.</em></p>
+    <p class="pain-desc">La pareja quiere vivir algo diferente juntos pero los planes del fin de semana siempre terminan siendo lo mismo: delivery y Netflix. La promesa: <em>un fin de semana en Miraflores cambia eso.</em></p>
 
     <div class="cgrid">
-      <div class="ccard p1tp">
+      <!-- C1 -->
+      <div class="ccard p1tp en-prod">
         <div class="cnum">Creativo 1</div>
-        <div class="pills-row"><span class="format-pill">🎬 Reel 15–20 s</span><span class="angle-pill a-ps">Problema–Solución</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"¿Cuándo fue la última vez que hicieron algo solo para ustedes dos?"</div>
-        <div class="flabel">Descripción del video</div><div class="fval">Abre con pareja en sofá mirando el techo (rutina). Corte rápido: balcón del depto, vista al cielo de Miraflores, mesa servida con velas, cama premium, piscina de noche. Música lo-fi íntima.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Este fin de semana pueden estar a 20 min de casa y sentir que viajaron. Departamento completo en el corazón de Miraflores desde S/280 la noche.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Consultar disponibilidad →</span>
+        <div class="status-bar"><span class="status s-prod">🎬 En producción · Tanda 1</span></div>
+        <span class="format-pill">🎬 Reel 15–20 s</span><span class="angle-pill a-ps">Problema–Solución</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"¿Cuándo fue la última vez que hicieron algo solo para ustedes dos?"</div>
+        <div class="flabel">Descripción del video</div>
+        <div class="fval">Abre con pareja en sofá mirando el techo (rutina). Corte rápido: balcón del depto, vista al cielo de Miraflores, mesa servida con velas, cama premium, piscina de noche. Música lo-fi íntima. Texto aparece letra a letra.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Este fin de semana pueden estar a 20 min de casa y sentir que viajaron. Departamento completo en el corazón de Miraflores desde S/280 la noche.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Consultar disponibilidad →</span>
       </div>
+
+      <!-- C2 -->
       <div class="ccard p1tp">
         <div class="cnum">Creativo 2</div>
-        <div class="pills-row"><span class="format-pill">🖼️ Imagen estática</span><span class="angle-pill a-ur">Urgencia</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Solo quedan 3 fines de semana libres en agosto."</div>
-        <div class="flabel">Descripción visual</div><div class="fval">Foto de la cama principal con sábanas blancas impecables, luz natural desde el balcón. Overlay suave con texto minimalista. Diseño limpio tipo editorial.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Regálense una noche (o dos) en Miraflores. WiFi, piscina, coworking, todo incluido. Solo traen su ropa.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Escribinos por WhatsApp</span>
+        <span class="format-pill">🖼️ Imagen estática</span><span class="angle-pill a-ur">Urgencia</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Solo quedan 3 fines de semana libres en agosto."</div>
+        <div class="flabel">Descripción visual</div>
+        <div class="fval">Foto de la cama principal con sábanas blancas impecables, luz natural desde el balcón. Overlay suave con texto minimalista. Diseño limpio tipo editorial.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Regálense una noche (o dos) en Miraflores. WiFi, piscina, coworking, todo incluido. Solo traen su ropa.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Escribinos por WhatsApp</span>
       </div>
     </div>
+
+    <!-- C3 wide -->
     <div class="ccard-wide p1tp">
       <div class="wide-header">
         <span class="cnum" style="margin:0">Creativo 3</span>
         <span class="format-pill">🎠 Carrusel</span><span class="angle-pill a-tm">Aspiracional</span>
       </div>
       <div class="wide-body">
-        <div><div class="flabel">Slide 1 — Hook</div><div class="hook-val">"Así es su fin de semana ideal (si se lo proponen)."</div></div>
-        <div><div class="flabel">Slides 2–5</div><div class="fval">Slide 2: Vista del balcón al atardecer. Slide 3: Cocina equipada con desayuno servido. Slide 4: Piscina del edificio. Slide 5: Pin — "A 4 min caminando de Larcomar".</div></div>
-        <div><div class="flabel">Slide 6 — CTA</div><div class="fval">Precio desde S/280/noche. Incluye WiFi, luz, agua y limpieza. "¿Les avisamos si hay disponibilidad este fin de semana?"</div><span class="cta-btn" style="display:inline-block;margin-top:8px">Sí, avísenme →</span></div>
+        <div>
+          <div class="flabel">Slide 1 — Hook</div>
+          <div class="hook-val">"Así es su fin de semana ideal (si se lo proponen)."</div>
+        </div>
+        <div>
+          <div class="flabel">Slides 2–5</div>
+          <div class="fval">Slide 2: Vista del balcón al atardecer. Slide 3: Cocina equipada con desayuno servido. Slide 4: Piscina del edificio. Slide 5: Pin en mapa — "A 4 min caminando de Larcomar".</div>
+        </div>
+        <div>
+          <div class="flabel">Slide 6 — CTA</div>
+          <div class="fval">Precio desde S/280/noche. Incluye WiFi, luz, agua y limpieza.<br>"¿Les avisamos si hay disponibilidad este fin de semana?"</div>
+          <span class="cta-btn" style="margin-top:8px;display:inline-block">Sí, avísenme →</span>
+        </div>
       </div>
     </div>
 
     <hr class="div"/>
 
-    <div class="pain-header p1h p1bd">
+    <!-- DOLOR 1.2 -->
+    <div class="pain-header p1h p1bd" style="border-left:3px solid #C47830">
       <span style="font-size:18px">🏨</span>
       <span class="pain-title">Dolor 2 — Hoteles caros, Airbnb sin privacidad ni calidad</span>
-      <span class="pain-badge" style="background:#EDE9FE;color:#5B21B6">Comparación</span>
+      <span style="font-size:11px;color:#8C7355;background:#F5EFE6;padding:2px 9px;border-radius:100px">Comparación</span>
     </div>
     <p class="pain-desc">Quieren algo mejor que un hotel pequeño pero no confían en Airbnb por experiencias malas. Este departamento rompe esa barrera mostrando calidad real.</p>
 
     <div class="cgrid">
+      <!-- C4 -->
       <div class="ccard p1tp">
         <div class="cnum">Creativo 4</div>
-        <div class="pills-row"><span class="format-pill">📱 UGC — selfie</span><span class="angle-pill a-ug">Testimonial</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Buscamos hotel en Miraflores y terminamos eligiendo esto. No nos arrepentimos."</div>
-        <div class="flabel">Descripción</div><div class="fval">Persona habla a cámara desde el balcón del depto, mostrando la vista. Tono casual tipo story de Instagram. Recorre: sala, cama, baño, piscina. Termina con el precio y cómo reservar por WhatsApp.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Privacidad de un apartamento propio + confort de hotel 4 estrellas. Sin sorpresas.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Ver más fotos →</span>
+        <span class="format-pill">📱 UGC — formato selfie</span><span class="angle-pill a-ug">Testimonial</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Buscamos hotel en Miraflores y terminamos eligiendo esto. No nos arrepentimos."</div>
+        <div class="flabel">Descripción</div>
+        <div class="fval">Persona habla a cámara desde el balcón del depto, mostrando la vista. Tono casual tipo story de Instagram. Recorre: sala, cama, baño, piscina. Termina diciendo el precio y cómo reservar por WhatsApp.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Privacidad de un apartamento propio + confort de hotel 4 estrellas. Sin sorpresas.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Ver más fotos →</span>
       </div>
+
+      <!-- C5 -->
       <div class="ccard p1tp">
         <div class="cnum">Creativo 5</div>
-        <div class="pills-row"><span class="format-pill">🖼️ Imagen comparativa</span><span class="angle-pill a-cp">Comparación</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Hotel en Miraflores: S/450/noche. Este depto completo: S/280."</div>
-        <div class="flabel">Descripción visual</div><div class="fval">Diseño en dos columnas. Izquierda: cuarto de hotel pequeño, precio alto. Derecha: depto amoblado con espacio, balcón y precio menor. Sin mencionar marcas.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">79 m², 2 dormitorios, piscina, coworking, cocina equipada. Más espacio, más privacidad, menos costo.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Consultar disponibilidad</span>
+        <span class="format-pill">🖼️ Imagen comparativa</span><span class="angle-pill a-cp">Comparación</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Hotel en Miraflores: S/450/noche. Este depto completo: S/280."</div>
+        <div class="flabel">Descripción visual</div>
+        <div class="fval">Diseño en dos columnas. Izquierda: cuarto de hotel pequeño, precio alto. Derecha: depto amoblado con espacio, balcón y precio. Sin mencionar marcas.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">79 m², 2 dormitorios, piscina, coworking, cocina equipada. Más espacio, más privacidad, menos costo.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Consultar disponibilidad</span>
       </div>
     </div>
+
+    <!-- C6 wide -->
     <div class="ccard-wide p1tp">
       <div class="wide-header">
         <span class="cnum" style="margin:0">Creativo 6</span>
         <span class="format-pill">🎬 Reel educativo</span><span class="angle-pill a-ed">Educativo</span>
       </div>
       <div class="wide-body">
-        <div><div class="flabel">Hook</div><div class="hook-val">"3 razones por las que elegir un depto amoblado sobre un hotel en Miraflores."</div></div>
-        <div><div class="flabel">Estructura</div><div class="fval">Razón 1: "Tenés cocina — desayunan cuando quieran." Razón 2: "Dos dormitorios — cada quien su espacio." Razón 3: "Piscina + gimnasio incluidos — sin costo extra."</div></div>
-        <div><div class="flabel">Cierre + CTA</div><div class="fval">"Disponible por días, fines de semana o meses. Av. Larco, piso 9, Miraflores."</div><span class="cta-btn" style="display:inline-block;margin-top:8px">Escribinos hoy →</span></div>
+        <div>
+          <div class="flabel">Hook</div>
+          <div class="hook-val">"3 razones por las que elegir un depto amoblado sobre un hotel en Miraflores."</div>
+        </div>
+        <div>
+          <div class="flabel">Estructura del video</div>
+          <div class="fval">Razón 1 (3 s): "Tenés cocina — desayunan cuando quieran." Razón 2 (3 s): "Dos dormitorios — cada quien su espacio." Razón 3 (3 s): "Piscina + gimnasio incluidos — sin costo extra."</div>
+        </div>
+        <div>
+          <div class="flabel">Cierre + CTA</div>
+          <div class="fval">"Disponible por días, fines de semana o meses. Av. Larco, piso 9, Miraflores."</div>
+          <span class="cta-btn" style="margin-top:8px;display:inline-block">Escribinos hoy →</span>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
 
-<!-- ═══ P2 EJECUTIVO ═══ -->
+
+<!-- ══════════════════════════════
+     PERSONA 2 — EJECUTIVO
+══════════════════════════════ -->
 <section id="p2" class="section-block">
   <div class="eyebrow">Buyer Persona 02</div>
   <h2 class="section-h">El Ejecutivo o Profesional Viajero</h2>
   <p class="section-desc">Ejecutivos en comisión, consultores, médicos o abogados en Lima por trabajo. Necesitan comodidad, conexión y cero fricción. El precio es secundario.</p>
 </section>
+
 <div class="persona-card">
   <div class="persona-header">
     <div class="persona-emoji p2e">💼</div>
     <div>
       <div class="persona-name">Carlos — El Ejecutivo en Misión</div>
-      <span class="ptag p2tag">35–55 años</span><span class="ptag p2tag">Provincias o exterior</span><span class="ptag p2tag">NSE A</span>
+      <span class="ptag p2tag">35–55 años</span>
+      <span class="ptag p2tag">Provincias o exterior</span>
+      <span class="ptag p2tag">NSE A</span>
     </div>
   </div>
   <div class="persona-body">
     <div class="pgrid">
-      <div><div class="pinfo-label">Quién es</div><div class="pinfo-text">Gerente, consultor o profesional de salud que viaja a Lima cada mes o por temporadas de 2–8 semanas. Exige puntualidad y calidad.</div></div>
-      <div><div class="pinfo-label">Qué le importa</div><div class="pinfo-text">WiFi estable, zona de trabajo, cama cómoda, que todo esté listo al llegar. No quiere lidiar con propietarios ni sorpresas.</div></div>
-      <div><div class="pinfo-label">Dónde lo encontrás</div><div class="pinfo-text">LinkedIn, Facebook grupos de ejecutivos, búsquedas "alquiler temporal ejecutivo Lima", viajeros frecuentes de negocios.</div></div>
+      <div>
+        <div class="pinfo-label">Quién es</div>
+        <div class="pinfo-text">Gerente, consultor independiente o profesional de salud que viaja a Lima cada mes o por temporadas de 2–8 semanas. Exige puntualidad y calidad.</div>
+      </div>
+      <div>
+        <div class="pinfo-label">Qué le importa</div>
+        <div class="pinfo-text">WiFi estable, zona de trabajo, cama cómoda, que todo esté listo al llegar. No quiere lidiar con propietarios ni sorpresas de último momento.</div>
+      </div>
+      <div>
+        <div class="pinfo-label">Dónde lo encontrás</div>
+        <div class="pinfo-text">LinkedIn, Facebook grupos de ejecutivos, búsquedas "alquiler temporal ejecutivo Lima", viajeros frecuentes de negocios.</div>
+      </div>
     </div>
 
-    <div class="pain-header p2h p2bd">
+    <!-- DOLOR 2.1 -->
+    <div class="pain-header p2h p2bd" style="border-left:3px solid #3B82C4">
       <span style="font-size:18px">🏠</span>
       <span class="pain-title">Dolor 1 — El hotel cansa: sin cocina, sin espacio, sin vida</span>
-      <span class="pain-badge" style="background:#FEE2D5;color:#9A3412">Lifestyle</span>
+      <span style="font-size:11px;color:#1E4E7A;background:#DBEAFE;padding:2px 9px;border-radius:100px">Lifestyle</span>
     </div>
     <p class="pain-desc">Semanas en hotel generan agotamiento mental. Sin cocina, sin espacio para descansar de verdad, sin rutina. El departamento resuelve todo eso.</p>
 
     <div class="cgrid">
-      <div class="ccard p2tp">
+      <div class="ccard p2tp en-prod">
         <div class="cnum">Creativo 7</div>
-        <div class="pills-row"><span class="format-pill">🎬 Reel POV</span><span class="angle-pill a-tm">Aspiracional</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Llevas 3 semanas en Lima. ¿Seguís pagando hotel?"</div>
-        <div class="flabel">Descripción</div><div class="fval">Video POV: llegan con maleta, abren la puerta, muestran coworking interno, cocina equipada, escritorio. Termina con vista desde el balcón de noche. Música ambiente.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Departamento completo en Av. Larco con WiFi, coworking, piscina y todo incluido. Para estadías de días, semanas o meses.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Consultar tarifas por semana →</span>
+        <div class="status-bar"><span class="status s-prod">🎬 En producción · Tanda 1</span></div>
+        <span class="format-pill">🎬 Reel "día en el depto"</span><span class="angle-pill a-tm">Aspiracional</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Llevas 3 semanas en Lima. ¿Seguís pagando hotel?"</div>
+        <div class="flabel">Descripción</div>
+        <div class="fval">Video POV: llegan con maleta, abren la puerta, muestran coworking interno, cocina equipada, escritorio. Termina con vista desde el balcón de noche. Tono aspiracional, música ambiente.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Departamento completo en Av. Larco con WiFi, coworking, piscina y todo incluido. Para estadías de días, semanas o meses.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Consultar tarifas por semana →</span>
       </div>
       <div class="ccard p2tp">
         <div class="cnum">Creativo 8</div>
-        <div class="pills-row"><span class="format-pill">🖼️ Imagen editorial</span><span class="angle-pill a-ps">Problema–Solución</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Trabajar desde Lima no tiene que ser incómodo."</div>
-        <div class="flabel">Descripción visual</div><div class="fval">Foto del escritorio del depto bien iluminado. Laptop abierta, café al lado, luz natural. Copy limpio superpuesto sobre la imagen.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">WiFi de alta velocidad, espacio de trabajo, coworking en el edificio. Todo listo desde que llegás.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Ver disponibilidad →</span>
+        <span class="format-pill">🖼️ Imagen editorial</span><span class="angle-pill a-ps">Problema–Solución</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Trabajar desde Lima no tiene que ser incómodo."</div>
+        <div class="flabel">Descripción visual</div>
+        <div class="fval">Foto del escritorio del depto bien iluminado. Laptop abierta, café al lado, luz natural. Copy limpio superpuesto.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">WiFi de alta velocidad, espacio de trabajo, coworking en el edificio. Todo listo desde que llegás.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Ver disponibilidad →</span>
       </div>
     </div>
+
     <div class="ccard-wide p2tp">
       <div class="wide-header">
         <span class="cnum" style="margin:0">Creativo 9</span>
         <span class="format-pill">🎠 Carrusel "Lo que incluye"</span><span class="angle-pill a-ed">Educativo</span>
       </div>
       <div class="wide-body">
-        <div><div class="flabel">Slide 1 — Hook</div><div class="hook-val">"Si venís a Lima por trabajo, esto es lo que necesitás saber."</div></div>
-        <div><div class="flabel">Slides 2–5</div><div class="fval">Slide 2: WiFi + escritorio. Slide 3: Cocina equipada (no más comida de hotel). Slide 4: Coworking y sala de reuniones en el edificio. Slide 5: A 5 min de San Isidro y centro de Miraflores.</div></div>
-        <div><div class="flabel">Slide final + CTA</div><div class="fval">Servicios incluidos: luz, agua, WiFi, limpieza. "Llegá con tu maleta. Nosotros preparamos todo."</div><span class="cta-btn" style="display:inline-block;margin-top:8px">Reservar por WhatsApp</span></div>
+        <div>
+          <div class="flabel">Slide 1 — Hook</div>
+          <div class="hook-val">"Si venís a Lima por trabajo, esto es lo que necesitás saber."</div>
+        </div>
+        <div>
+          <div class="flabel">Slides 2–5</div>
+          <div class="fval">Slide 2: WiFi + escritorio. Slide 3: Cocina equipada (no más comida de hotel). Slide 4: Coworking y sala de reuniones en el edificio. Slide 5: A 5 min de San Isidro y Miraflores centro.</div>
+        </div>
+        <div>
+          <div class="flabel">Slide final + CTA</div>
+          <div class="fval">Servicios incluidos: luz, agua, WiFi, limpieza. "Llegá con tu maleta. Nosotros preparamos todo."</div>
+          <span class="cta-btn" style="margin-top:8px;display:inline-block">Reservar por WhatsApp</span>
+        </div>
       </div>
     </div>
 
     <hr class="div"/>
 
-    <div class="pain-header p2h p2bd">
+    <!-- DOLOR 2.2 -->
+    <div class="pain-header p2h p2bd" style="border-left:3px solid #3B82C4">
       <span style="font-size:18px">⚡</span>
       <span class="pain-title">Dolor 2 — Encontrar alquiler temporal en Lima es un caos</span>
-      <span class="pain-badge" style="background:#D1FAE5;color:#065F46">Fricción eliminada</span>
+      <span style="font-size:11px;color:#1E4E7A;background:#DBEAFE;padding:2px 9px;border-radius:100px">Fricción eliminada</span>
     </div>
-    <p class="pain-desc">Propietarios que no responden, fotos que no coinciden, procesos burocráticos. El ejecutivo no tiene tiempo. La promesa: reserva en 5 minutos por WhatsApp.</p>
+    <p class="pain-desc">Propietarios que no responden, fotos que no coinciden, procesos burocráticos. El ejecutivo no tiene tiempo para eso. La promesa: reserva en 5 minutos por WhatsApp.</p>
 
     <div class="cgrid">
       <div class="ccard p2tp">
         <div class="cnum">Creativo 10</div>
-        <div class="pills-row"><span class="format-pill">📱 UGC review</span><span class="angle-pill a-ug">Testimonial</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Busqué alquiler temporal en Lima por semanas y esto fue lo mejor que encontré."</div>
-        <div class="flabel">Descripción</div><div class="fval">Persona habla a cámara como reseña honesta. Menciona problemas típicos (propietarios lentos, fotos que engañan) y cómo este departamento fue diferente: proceso rápido, todo confirmado por WhatsApp.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Proceso simple: escribís por WhatsApp, acordás fechas, llegás. Sin contratos complicados ni sorpresas.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Escribí hoy →</span>
+        <span class="format-pill">📱 UGC estilo review</span><span class="angle-pill a-ug">Testimonial</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Busqué alquiler temporal en Lima por semanas y esto fue lo mejor que encontré."</div>
+        <div class="flabel">Descripción</div>
+        <div class="fval">Persona habla a cámara como reseña honesta. Menciona problemas típicos (propietarios lentos, fotos que engañan) y cómo este departamento fue diferente: proceso rápido, todo confirmado por WhatsApp.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Proceso simple: escribís por WhatsApp, acordás fechas, llegás. Sin contratos complicados ni sorpresas.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Escribí hoy →</span>
       </div>
       <div class="ccard p2tp">
         <div class="cnum">Creativo 11</div>
-        <div class="pills-row"><span class="format-pill">🖼️ Imagen directa</span><span class="angle-pill a-ur">Urgencia</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"¿Llegás a Lima la próxima semana? Ya tenemos disponibilidad."</div>
-        <div class="flabel">Descripción visual</div><div class="fval">Foto del departamento iluminado de noche. Texto grande y claro. Check-in express mencionado. Sensación de que está listo ahora mismo.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Miraflores. Piso 9. Amoblado, equipado y con internet. Consultá fechas y precio por WhatsApp en menos de 5 minutos.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Consultar ahora →</span>
+        <span class="format-pill">🖼️ Imagen texto directo</span><span class="angle-pill a-ur">Urgencia</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"¿Llegás a Lima la próxima semana? Ya tenemos disponibilidad."</div>
+        <div class="flabel">Descripción visual</div>
+        <div class="fval">Foto del departamento iluminado de noche. Texto grande y claro. Check-in express mencionado. Sensación de que está listo ahora mismo.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Miraflores. Piso 9. Amoblado, equipado y con internet. Consultá fechas y precio por WhatsApp en menos de 5 minutos.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Consultar ahora →</span>
       </div>
     </div>
+
     <div class="ccard-wide p2tp">
       <div class="wide-header">
         <span class="cnum" style="margin:0">Creativo 12</span>
         <span class="format-pill">🎬 Reel comparativo</span><span class="angle-pill a-cp">Comparación</span>
       </div>
       <div class="wide-body">
-        <div><div class="flabel">Hook</div><div class="hook-val">"Hotel ejecutivo en Miraflores vs. nuestro departamento — lo que nadie te dice."</div></div>
-        <div><div class="flabel">Estructura</div><div class="fval">3 pantallas divididas: Precio / Espacio / Lo que incluye. Hotel (restricciones) vs. depto (libertades). Ritmo rápido, solo texto y música, sin narración.</div></div>
-        <div><div class="flabel">Cierre + CTA</div><div class="fval">"Miraflores. Av. Larco. Desde S/280/noche." Texto directo y sin adornos.</div><span class="cta-btn" style="display:inline-block;margin-top:8px">Reservar por WhatsApp</span></div>
+        <div>
+          <div class="flabel">Hook</div>
+          <div class="hook-val">"Hotel ejecutivo en Miraflores vs. nuestro departamento — lo que nadie te dice."</div>
+        </div>
+        <div>
+          <div class="flabel">Estructura</div>
+          <div class="fval">3 pantallas divididas: Precio / Espacio / Lo que incluye. Cada una muestra hotel (restricciones) vs. depto (libertades). Ritmo rápido, solo texto y música, sin narración.</div>
+        </div>
+        <div>
+          <div class="flabel">Cierre + CTA</div>
+          <div class="fval">"Miraflores. Av. Larco. Desde S/280/noche." Texto directo y sin adornos.</div>
+          <span class="cta-btn" style="margin-top:8px;display:inline-block">Reservar por WhatsApp</span>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
 
-<!-- ═══ P3 FAMILIA ═══ -->
+
+<!-- ══════════════════════════════
+     PERSONA 3 — FAMILIA
+══════════════════════════════ -->
 <section id="p3" class="section-block">
   <div class="eyebrow">Buyer Persona 03</div>
   <h2 class="section-h">La Familia en Transición o Mudanza</h2>
   <p class="section-desc">Familias en Lima por obra, mudanza, remodelación o reubicación. Necesitan espacio, comodidad y seguridad para todos. El segundo dormitorio es decisivo.</p>
 </section>
+
 <div class="persona-card">
   <div class="persona-header">
     <div class="persona-emoji p3e">👨‍👩‍👧</div>
     <div>
       <div class="persona-name">Los Mendoza — La Familia que Necesita un Puente</div>
-      <span class="ptag p3tag">Padres 30–50</span><span class="ptag p3tag">2–4 integrantes</span><span class="ptag p3tag">NSE A/B</span>
+      <span class="ptag p3tag">Padres 30–50</span>
+      <span class="ptag p3tag">2–4 integrantes</span>
+      <span class="ptag p3tag">NSE A/B</span>
     </div>
   </div>
   <div class="persona-body">
     <div class="pgrid">
-      <div><div class="pinfo-label">Quiénes son</div><div class="pinfo-text">Familia con niños pequeños o adolescentes en transición: esperan mudarse, renovando su casa, llegando de provincia o recibiendo familia del exterior.</div></div>
-      <div><div class="pinfo-label">Qué les importa</div><div class="pinfo-text">Seguridad del edificio, dos dormitorios separados, cocina completa para preparar comida propia, zona tranquila y acceso fácil a servicios.</div></div>
-      <div><div class="pinfo-label">Dónde los encontrás</div><div class="pinfo-text">Grupos de Facebook de familias limeñas, búsquedas "alquiler temporal 2 dormitorios Lima", padres en grupos de colegios privados.</div></div>
+      <div>
+        <div class="pinfo-label">Quiénes son</div>
+        <div class="pinfo-text">Familia con niños pequeños o adolescentes en transición: esperan mudarse, renovando su casa, llegando de provincia o recibiendo familia del exterior.</div>
+      </div>
+      <div>
+        <div class="pinfo-label">Qué les importa</div>
+        <div class="pinfo-text">Seguridad del edificio, dos dormitorios separados, cocina completa para preparar comida propia, zona tranquila y acceso fácil a servicios.</div>
+      </div>
+      <div>
+        <div class="pinfo-label">Dónde los encontrás</div>
+        <div class="pinfo-text">Grupos de Facebook de familias limeñas, búsquedas "alquiler temporal con 2 dormitorios Lima", padres en grupos de colegios privados.</div>
+      </div>
     </div>
 
-    <div class="pain-header p3h p3bd">
+    <div class="pain-header p3h p3bd" style="border-left:3px solid #34A068">
       <span style="font-size:18px">📦</span>
       <span class="pain-title">Dolor 1 — No tenemos dónde quedarnos mientras resolvemos la situación</span>
-      <span class="pain-badge" style="background:#D1FAE5;color:#065F46">Solución inmediata</span>
+      <span style="font-size:11px;color:#065F46;background:#D1FAE5;padding:2px 9px;border-radius:100px">Solución inmediata</span>
     </div>
-    <p class="pain-desc">La familia necesita un lugar seguro, funcional y por el tiempo justo. Sin contratos de un año, sin muebles propios. Solo llegar y estar.</p>
+    <p class="pain-desc">La familia necesita un lugar seguro, funcional y por el tiempo justo que necesite. Sin contratos de un año, sin muebles propios. Solo llegar y estar.</p>
 
     <div class="cgrid">
       <div class="ccard p3tp">
         <div class="cnum">Creativo 13</div>
-        <div class="pills-row"><span class="format-pill">🎬 Reel narrativo</span><span class="angle-pill a-ps">Problema–Solución</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Tu casa está en remodelación. Los niños necesitan estabilidad. Nosotros tenemos la solución."</div>
-        <div class="flabel">Descripción</div><div class="fval">Video que muestra el depto como hogar temporal completo: sala familiar, cocina con menaje, 2 dormitorios separados, piscina. Tono tranquilizador, no de lujo.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">2 dormitorios, cocina equipada, WiFi y piscina. En Miraflores, por los días o semanas que necesiten. Sin cambiar sus rutinas.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Consultar por semanas →</span>
+        <span class="format-pill">🎬 Reel narrativo</span><span class="angle-pill a-ps">Problema–Solución</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Tu casa está en remodelación. Los niños necesitan estabilidad. Nosotros tenemos la solución."</div>
+        <div class="flabel">Descripción</div>
+        <div class="fval">Video que muestra el depto como hogar temporal completo: sala familiar, cocina con menaje, 2 dormitorios separados, áreas comunes (piscina). Tono tranquilizador, no de lujo.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">2 dormitorios, cocina equipada, WiFi y piscina. En Miraflores, por los días o semanas que necesiten. Sin cambiar sus rutinas.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Consultar por semanas →</span>
       </div>
       <div class="ccard p3tp">
         <div class="cnum">Creativo 14</div>
-        <div class="pills-row"><span class="format-pill">🎠 Carrusel checklist</span><span class="angle-pill a-ed">Educativo</span></div>
-        <div class="flabel">Hook — Slide 1</div><div class="hook-val">"Todo lo que necesita tu familia para estar cómoda mientras resuelven el resto."</div>
-        <div class="flabel">Slides</div><div class="fval">Slide 2: 2 dorm / camas separadas. Slide 3: Cocina completa + menaje. Slide 4: Piscina y áreas comunes. Slide 5: Seguridad 24h, ascensor, piso 9. Slide 6: Precio por semana con CTA.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Preguntar disponibilidad</span>
+        <span class="format-pill">🎠 Carrusel checklist</span><span class="angle-pill a-ed">Educativo</span>
+        <div class="flabel">Hook — Slide 1</div>
+        <div class="hook-val">"Todo lo que necesita tu familia para estar cómoda mientras resuelven el resto."</div>
+        <div class="flabel">Slides</div>
+        <div class="fval">Slide 2: 2 dorm / camas separadas. Slide 3: Cocina completa + menaje. Slide 4: Piscina y áreas comunes. Slide 5: Seguridad 24h, ascensor, piso 9. Slide 6: Precio por semana con CTA.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Preguntar disponibilidad</span>
       </div>
     </div>
+
     <div class="ccard-wide p3tp">
       <div class="wide-header">
         <span class="cnum" style="margin:0">Creativo 15</span>
         <span class="format-pill">🖼️ Imagen con checklist</span><span class="angle-pill a-ur">Urgencia práctica</span>
       </div>
       <div class="wide-body">
-        <div><div class="flabel">Hook</div><div class="hook-val">"¿Necesitan un lugar en Miraflores esta semana o el próximo mes?"</div></div>
-        <div><div class="flabel">Visual</div><div class="fval">Foto del living-comedor amplio con luz natural. Checklist superpuesto: ✓ 2 dorm ✓ Cocina equipada ✓ WiFi ✓ Piscina ✓ Seguridad 24h ✓ Servicios incluidos.</div></div>
-        <div><div class="flabel">Cierre + CTA</div><div class="fval">Departamento listo para entrar desde S/280/noche. Consultá por WhatsApp en cualquier momento.</div><span class="cta-btn" style="display:inline-block;margin-top:8px">Consultar ahora</span></div>
+        <div>
+          <div class="flabel">Hook</div>
+          <div class="hook-val">"¿Necesitan un lugar en Miraflores esta semana o el próximo mes?"</div>
+        </div>
+        <div>
+          <div class="flabel">Visual</div>
+          <div class="fval">Foto del living-comedor amplio con luz natural. Checklist superpuesto: ✓ 2 dorm ✓ Cocina equipada ✓ WiFi ✓ Piscina ✓ Seguridad 24h ✓ Servicios incluidos.</div>
+        </div>
+        <div>
+          <div class="flabel">Cierre + CTA</div>
+          <div class="fval">Departamento listo para entrar desde S/280/noche. Consultá por WhatsApp en cualquier momento.</div>
+          <span class="cta-btn" style="margin-top:8px;display:inline-block">Consultar ahora</span>
+        </div>
       </div>
     </div>
 
     <hr class="div"/>
 
-    <div class="pain-header p3h p3bd">
+    <div class="pain-header p3h p3bd" style="border-left:3px solid #34A068">
       <span style="font-size:18px">🔒</span>
       <span class="pain-title">Dolor 2 — Miedo a que un alquiler temporal sea inseguro o informal</span>
-      <span class="pain-badge" style="background:#FCE7F3;color:#9D174D">Confianza</span>
+      <span style="font-size:11px;color:#065F46;background:#D1FAE5;padding:2px 9px;border-radius:100px">Confianza</span>
     </div>
-    <p class="pain-desc">La familia no puede arriesgar la seguridad de sus hijos. Necesitan prueba de que el proceso es serio, transparente y confiable.</p>
+    <p class="pain-desc">La familia no puede arriesgar la seguridad de sus hijos en un lugar desconocido. Necesitan prueba de que el proceso es serio, transparente y confiable.</p>
 
     <div class="cgrid">
       <div class="ccard p3tp">
         <div class="cnum">Creativo 16</div>
-        <div class="pills-row"><span class="format-pill">📱 UGC recorrido familiar</span><span class="angle-pill a-ug">Testimonial</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Les muestro el departamento en el que nos quedamos con mis hijos en Miraflores."</div>
-        <div class="flabel">Descripción</div><div class="fval">Recorrido tipo "tour de mamá/papá": cama de niños, cocina, baño, ascensor, piscina. Tono real, no producido. Termina: "Lo reservamos directo por WhatsApp, sin complicaciones."</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Lo que ven es lo que reciben. Llacta Inmobiliaria gestiona el proceso de forma profesional y transparente.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Ver fotos reales →</span>
+        <span class="format-pill">📱 UGC recorrido familiar</span><span class="angle-pill a-ug">Testimonial</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Les muestro el departamento en el que nos quedamos con mis hijos en Miraflores."</div>
+        <div class="flabel">Descripción</div>
+        <div class="fval">Recorrido tipo "tour de mamá/papá": cama de niños, cocina, baño, ascensor, piscina. Tono real, no producido. Termina: "Lo reservamos directo por WhatsApp, sin complicaciones."</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Lo que ven es lo que reciben. Llacta Inmobiliaria gestiona el proceso de forma profesional y transparente.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Ver fotos reales →</span>
       </div>
       <div class="ccard p3tp">
         <div class="cnum">Creativo 17</div>
-        <div class="pills-row"><span class="format-pill">🎬 Reel "antes de reservar"</span><span class="angle-pill a-ed">Educativo</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Antes de alquilar un depto temporal en Lima, fijate en esto."</div>
-        <div class="flabel">Descripción</div><div class="fval">Tips rápidos en pantalla: ¿Hay inmobiliaria de respaldo? ¿Fotos reales? ¿Qué incluye el precio? ¿Cómo es el proceso de reserva? Cada punto resuelto favorablemente.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Llacta Inmobiliaria: gestión profesional, precios claros, respuesta en menos de 1 hora.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Escribinos hoy</span>
+        <span class="format-pill">🎬 Reel "antes de reservar"</span><span class="angle-pill a-ed">Educativo</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Antes de alquilar un depto temporal en Lima, fijate en esto."</div>
+        <div class="flabel">Descripción</div>
+        <div class="fval">Tips rápidos en pantalla: ¿Hay inmobiliaria de respaldo? ¿Fotos reales? ¿Qué incluye el precio? ¿Cómo es el proceso de reserva? Cada punto resuelto favorablemente por el departamento.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Llacta Inmobiliaria: gestión profesional, precios claros, respuesta en menos de 1 hora.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Escribinos hoy</span>
       </div>
     </div>
+
     <div class="ccard-wide p3tp">
       <div class="wide-header">
         <span class="cnum" style="margin:0">Creativo 18</span>
         <span class="format-pill">🖼️ Imagen "garantías"</span><span class="angle-pill a-cp">Comparación implícita</span>
       </div>
       <div class="wide-body">
-        <div><div class="flabel">Hook</div><div class="hook-val">"No es un aviso de Marketplace. Es una inmobiliaria profesional."</div></div>
-        <div><div class="flabel">Visual</div><div class="fval">Foto del depto con badge de Llacta Inmobiliaria visible. Texto: atención en horario comercial, fotos reales, precio sin sorpresas.</div></div>
-        <div><div class="flabel">Cierre + CTA</div><div class="fval">Miraflores, Av. Larco 791 · 2 dorm · S/280/noche · Consultá por WhatsApp.</div><span class="cta-btn" style="display:inline-block;margin-top:8px">Consultar →</span></div>
+        <div>
+          <div class="flabel">Hook</div>
+          <div class="hook-val">"No es un aviso de Marketplace. Es una inmobiliaria profesional."</div>
+        </div>
+        <div>
+          <div class="flabel">Visual</div>
+          <div class="fval">Foto del depto con badge de Llacta Inmobiliaria visible. Texto remarca: atención en horario comercial, fotos reales, precio sin sorpresas.</div>
+        </div>
+        <div>
+          <div class="flabel">Cierre + CTA</div>
+          <div class="fval">Miraflores, Av. Larco 791 · 2 dorm · S/280/noche · Consultá por WhatsApp.</div>
+          <span class="cta-btn" style="margin-top:8px;display:inline-block">Consultar →</span>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
 
-<!-- ═══ P4 TURISTA ═══ -->
+
+<!-- ══════════════════════════════
+     PERSONA 4 — TURISTA
+══════════════════════════════ -->
 <section id="p4" class="section-block">
   <div class="eyebrow">Buyer Persona 04</div>
   <h2 class="section-h">El Turista Premium o Viajero Internacional</h2>
   <p class="section-desc">Extranjeros o peruanos del interior que eligen Lima para explorar, comer y disfrutar. Quieren ubicación estratégica y calidad. Miraflores es su destino.</p>
 </section>
+
 <div class="persona-card">
   <div class="persona-header">
     <div class="persona-emoji p4e">✈️</div>
     <div>
       <div class="persona-name">Sofía — La Viajera que Quiere Vivir Lima de Verdad</div>
-      <span class="ptag p4tag">28–50 años</span><span class="ptag p4tag">Exterior o provincias</span><span class="ptag p4tag">Viajero activo</span>
+      <span class="ptag p4tag">28–50 años</span>
+      <span class="ptag p4tag">Exterior o provincias</span>
+      <span class="ptag p4tag">Viajero activo</span>
     </div>
   </div>
   <div class="persona-body">
     <div class="pgrid">
-      <div><div class="pinfo-label">Quién es</div><div class="pinfo-text">Extranjero que viene a Lima por turismo o trabajo temporal. O peruano de Arequipa/Trujillo/Cusco que visita Lima. Valora la autenticidad y la gastronomía.</div></div>
-      <div><div class="pinfo-label">Qué le importa</div><div class="pinfo-text">Ubicación cerca de todo: restaurantes top, malecón, Larcomar. Quiere sentir que "vive" Miraflores, no que solo duerme ahí. Seguridad y limpieza son innegociables.</div></div>
-      <div><div class="pinfo-label">Dónde lo encontrás</div><div class="pinfo-text">Búsquedas "qué hacer en Miraflores", grupos de viajeros en Lima, Instagram de turismo peruano, influencers de viaje en Latinoamérica.</div></div>
+      <div>
+        <div class="pinfo-label">Quién es</div>
+        <div class="pinfo-text">Extranjero que viene a Lima por turismo o trabajo temporal. O peruano de Arequipa/Trujillo/Cusco que visita Lima por vacaciones o gestiones. Valora la autenticidad.</div>
+      </div>
+      <div>
+        <div class="pinfo-label">Qué le importa</div>
+        <div class="pinfo-text">Ubicación cerca de todo: restaurantes top, malecón, Larcomar. Quiere sentir que "vive" Miraflores, no que solo duerme ahí. Seguridad y limpieza son innegociables.</div>
+      </div>
+      <div>
+        <div class="pinfo-label">Dónde lo encontrás</div>
+        <div class="pinfo-text">Búsquedas "qué hacer en Miraflores", grupos de viajeros en Lima, Instagram de turismo peruano, influencers de viaje en Latinoamérica.</div>
+      </div>
     </div>
 
-    <div class="pain-header p4h p4bd">
+    <div class="pain-header p4h p4bd" style="border-left:3px solid #E06040">
       <span style="font-size:18px">📍</span>
       <span class="pain-title">Dolor 1 — Lima es enorme y no sabe dónde quedarse para aprovecharla bien</span>
-      <span class="pain-badge" style="background:#FEE2D5;color:#9A3412">Ubicación</span>
+      <span style="font-size:11px;color:#9A3412;background:#FEE2D5;padding:2px 9px;border-radius:100px">Ubicación</span>
     </div>
-    <p class="pain-desc">El turista puede perder días eligiendo hotel en el lugar equivocado. Miraflores + Av. Larco es la respuesta. El creativo hace el mapa mental de por qué esta ubicación gana.</p>
+    <p class="pain-desc">El turista puede perderse días eligiendo hotel en el lugar equivocado. Miraflores + Av. Larco es la respuesta. El creativo hace el mapa mental de por qué esta ubicación gana.</p>
 
     <div class="cgrid">
-      <div class="ccard p4tp">
+      <div class="ccard p4tp en-prod">
         <div class="cnum">Creativo 19</div>
-        <div class="pills-row"><span class="format-pill">🎬 Reel "todo a pie"</span><span class="angle-pill a-tm">Aspiracional</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"¿Cuántos de tus lugares favoritos en Lima están a menos de 10 minutos caminando de acá?"</div>
-        <div class="flabel">Descripción</div><div class="fval">Video tipo mapa animado: desde Av. Larco se trazan líneas hacia Larcomar (3 min), Malecón Cisneros (5 min), Parque Kennedy (2 min), Astrid y Gastón (8 min). Termina con el interior del depto.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">El mejor depto para vivir Miraflores de verdad. A pasos de todo lo que querés conocer.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Reservar por WhatsApp →</span>
+        <div class="status-bar"><span class="status s-prod">🎬 En producción · Tanda 1</span></div>
+        <span class="format-pill">🎬 Reel "todo a pie"</span><span class="angle-pill a-tm">Aspiracional</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"¿Cuántos de tus lugares favoritos en Lima están a menos de 10 minutos caminando de acá?"</div>
+        <div class="flabel">Descripción</div>
+        <div class="fval">Video tipo mapa animado: desde el depto en Av. Larco se trazan líneas hacia Larcomar (3 min), Malecón Cisneros (5 min), Parque Kennedy (2 min), Astrid y Gastón (8 min). Termina con el interior del depto.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">El mejor depto para vivir Miraflores de verdad. A pasos de todo lo que querés conocer.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Reservar por WhatsApp →</span>
       </div>
       <div class="ccard p4tp">
         <div class="cnum">Creativo 20</div>
-        <div class="pills-row"><span class="format-pill">🎠 Carrusel "Tu semana"</span><span class="angle-pill a-ed">Educativo</span></div>
-        <div class="flabel">Hook — Slide 1</div><div class="hook-val">"Lo que podés hacer en 5 días si te quedás en el corazón de Miraflores."</div>
-        <div class="flabel">Slides</div><div class="fval">Día 1: malecón + atardecer. Día 2: Larcomar + cena. Día 3: Barranco. Día 4: Mercado de Surquillo. Día 5: tour gastronómico. Foto + tip en cada slide.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Escribinos para reservar</span>
+        <span class="format-pill">🎠 Carrusel "Tu semana en Lima"</span><span class="angle-pill a-ed">Educativo</span>
+        <div class="flabel">Hook — Slide 1</div>
+        <div class="hook-val">"Lo que podés hacer en 5 días si te quedás en el corazón de Miraflores."</div>
+        <div class="flabel">Slides</div>
+        <div class="fval">Día 1: malecón + atardecer. Día 2: Larcomar + cena. Día 3: Barranco. Día 4: Mercado de Surquillo. Día 5: tour gastronómico. Foto + tip en cada slide.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Escribinos para reservar</span>
       </div>
     </div>
+
     <div class="ccard-wide p4tp">
       <div class="wide-header">
         <span class="cnum" style="margin:0">Creativo 21</span>
         <span class="format-pill">🖼️ Imagen lifestyle</span><span class="angle-pill a-ps">Problema–Solución</span>
       </div>
       <div class="wide-body">
-        <div><div class="flabel">Hook</div><div class="hook-val">"Viniste a conocer Lima. No a perderte en ella."</div></div>
-        <div><div class="flabel">Visual</div><div class="fval">Foto desde el balcón con vista al barrio de Miraflores de día. Texto superpuesto con distancias a los íconos del barrio. Paleta visual cálida y sofisticada.</div></div>
-        <div><div class="flabel">Cierre + CTA</div><div class="fval">Av. Larco · Vista piso 9 · 2 dorm · S/280/noche.</div><span class="cta-btn" style="display:inline-block;margin-top:8px">Consultar por WhatsApp</span></div>
+        <div>
+          <div class="flabel">Hook</div>
+          <div class="hook-val">"Viniste a conocer Lima. No a perderte en ella."</div>
+        </div>
+        <div>
+          <div class="flabel">Visual</div>
+          <div class="fval">Foto aérea o desde el balcón con vista al barrio de Miraflores de día. Texto superpuesto con distancias a los íconos del barrio. Paleta visual sofisticada y cálida.</div>
+        </div>
+        <div>
+          <div class="flabel">Cierre + CTA</div>
+          <div class="fval">Ubicado en Av. Larco · Vista piso 9 · 2 dorm · S/280/noche.</div>
+          <span class="cta-btn" style="margin-top:8px;display:inline-block">Consultar por WhatsApp</span>
+        </div>
       </div>
     </div>
 
     <hr class="div"/>
 
-    <div class="pain-header p4h p4bd">
+    <div class="pain-header p4h p4bd" style="border-left:3px solid #E06040">
       <span style="font-size:18px">🌟</span>
       <span class="pain-title">Dolor 2 — Los hoteles buenos son caros y los Airbnb no son confiables</span>
-      <span class="pain-badge" style="background:#EDE9FE;color:#5B21B6">Confianza + valor</span>
+      <span style="font-size:11px;color:#9A3412;background:#FEE2D5;padding:2px 9px;border-radius:100px">Confianza + valor</span>
     </div>
     <p class="pain-desc">El turista que viene de afuera no quiere sorpresas. Necesita ver el departamento real, el proceso claro y una inmobiliaria profesional detrás.</p>
 
     <div class="cgrid">
       <div class="ccard p4tp">
         <div class="cnum">Creativo 22</div>
-        <div class="pills-row"><span class="format-pill">📱 UGC recorrido turista</span><span class="angle-pill a-ug">Testimonial</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Vine a Lima por primera vez y me quedé acá. Te cuento cómo fue."</div>
-        <div class="flabel">Descripción</div><div class="fval">Persona extranjera o provinciana recorre el depto con asombro genuino. Comenta la cocina, el balcón, la piscina. Cierra: "Y el precio es muchísimo mejor que el hotel que había visto."</div>
-        <div class="flabel">Mensaje central</div><div class="fval">La calidad de un hotel boutique con la privacidad de tener tu propio espacio. En pleno Miraflores.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Ver fotos completas →</span>
+        <span class="format-pill">📱 UGC recorrido turista</span><span class="angle-pill a-ug">Testimonial</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Vine a Lima por primera vez y me quedé acá. Te cuento cómo fue."</div>
+        <div class="flabel">Descripción</div>
+        <div class="fval">Persona extranjera o provinciana recorre el depto con asombro genuino. Comenta la cocina, el balcón, la piscina. Cierra: "Y el precio es muchísimo mejor que el hotel que había visto."</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">La calidad de un hotel boutique con la privacidad de tener tu propio espacio. En pleno Miraflores.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Ver fotos completas →</span>
       </div>
       <div class="ccard p4tp">
         <div class="cnum">Creativo 23</div>
-        <div class="pills-row"><span class="format-pill">🎬 Reel "noche en Miraflores"</span><span class="angle-pill a-tm">Aspiracional</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Así es una noche cuando te quedás en el corazón de Miraflores."</div>
-        <div class="flabel">Descripción</div><div class="fval">Video estético: balcón al atardecer, piscina de noche iluminada, calle Larco con vida nocturna, regreso al depto, cama preparada. Música lenta y elegante.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Miraflores de noche, desde el piso 9. Desde S/280.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Reservá por WhatsApp</span>
+        <span class="format-pill">🎬 Reel "noche en Miraflores"</span><span class="angle-pill a-tm">Aspiracional</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Así es una noche cuando te quedás en el corazón de Miraflores."</div>
+        <div class="flabel">Descripción</div>
+        <div class="fval">Video estético: balcón al atardecer, piscina de noche iluminada, calle Larco con vida nocturna, regreso al depto, cama preparada. Música lenta y elegante. Solo el precio al final.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Miraflores de noche, desde el piso 9. Desde S/280.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Reservá por WhatsApp</span>
       </div>
     </div>
+
     <div class="ccard-wide p4tp">
       <div class="wide-header">
         <span class="cnum" style="margin:0">Creativo 24</span>
-        <span class="format-pill">🖼️ Precio vs. calidad</span><span class="angle-pill a-cp">Comparación</span>
+        <span class="format-pill">🖼️ Imagen precio vs. calidad</span><span class="angle-pill a-cp">Comparación</span>
       </div>
       <div class="wide-body">
-        <div><div class="flabel">Hook</div><div class="hook-val">"Esto es lo que S/280 por noche te da en Miraflores."</div></div>
-        <div><div class="flabel">Visual</div><div class="fval">Foto del depto: sala + comedor + balcón. Lista superpuesta: 79 m² / 2 dorm / Piscina + gym / Coworking / WiFi + luz + agua / Limpieza incluida.</div></div>
-        <div><div class="flabel">Cierre + CTA</div><div class="fval">Gestionado por Llacta Inmobiliaria. Reserva transparente y directa por WhatsApp.</div><span class="cta-btn" style="display:inline-block;margin-top:8px">Ver disponibilidad →</span></div>
+        <div>
+          <div class="flabel">Hook</div>
+          <div class="hook-val">"Esto es lo que S/280 por noche te da en Miraflores."</div>
+        </div>
+        <div>
+          <div class="flabel">Visual</div>
+          <div class="fval">Foto del depto: sala + comedor + balcón. Lista superpuesta: 79 m² / 2 dorm / Piscina + gym / Coworking / WiFi + luz + agua / Limpieza incluida.</div>
+        </div>
+        <div>
+          <div class="flabel">Cierre + CTA</div>
+          <div class="fval">Gestionado por Llacta Inmobiliaria. Reserva transparente y directa por WhatsApp.</div>
+          <span class="cta-btn" style="margin-top:8px;display:inline-block">Ver disponibilidad →</span>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
 
-<!-- ═══ P5 NÓMADA ═══ -->
+
+<!-- ══════════════════════════════
+     PERSONA 5 — NÓMADA
+══════════════════════════════ -->
 <section id="p5" class="section-block">
   <div class="eyebrow">Buyer Persona 05</div>
   <h2 class="section-h">El Nómada Digital o Freelancer Internacional</h2>
-  <p class="section-desc">Profesionales remotos que trabajan desde cualquier lugar y eligen Lima como base. El WiFi y el coworking son filtros eliminatorios.</p>
+  <p class="section-desc">Profesionales remotos que trabajan desde cualquier lugar del mundo y eligen Lima como base. El WiFi y el coworking son filtros eliminatorios.</p>
 </section>
+
 <div class="persona-card">
   <div class="persona-header">
     <div class="persona-emoji p5e">💻</div>
     <div>
       <div class="persona-name">Matías — El Remote Worker que Elige Lima</div>
-      <span class="ptag p5tag">25–42 años</span><span class="ptag p5tag">Freelancer / Remote</span><span class="ptag p5tag">Internacional o expat</span>
+      <span class="ptag p5tag">25–42 años</span>
+      <span class="ptag p5tag">Freelancer / Remote</span>
+      <span class="ptag p5tag">Internacional o expat</span>
     </div>
   </div>
   <div class="persona-body">
     <div class="pgrid">
-      <div><div class="pinfo-label">Quién es</div><div class="pinfo-text">Designer, dev, marketer o consultor que trabaja 100% remoto y elige vivir en distintas ciudades. Lima está en su radar por gastronomía, costo-beneficio y zona horaria.</div></div>
-      <div><div class="pinfo-label">Qué le importa</div><div class="pinfo-text">WiFi rápido y estable (filtro #1), espacio de trabajo cómodo, zona segura para salir de noche, barrio con cafeterías. No quiere contratos largos ni trámites.</div></div>
-      <div><div class="pinfo-label">Dónde lo encontrás</div><div class="pinfo-text">Comunidades de nómadas en Facebook e Instagram, grupos "expats en Lima", hashtags #digitalnomad #remotework #lima, Reddit r/digitalnomad.</div></div>
+      <div>
+        <div class="pinfo-label">Quién es</div>
+        <div class="pinfo-text">Designer, dev, marketer o consultor que trabaja 100% remoto y elige vivir en distintas ciudades. Lima está en su radar por gastronomía, costo-beneficio y zona horaria.</div>
+      </div>
+      <div>
+        <div class="pinfo-label">Qué le importa</div>
+        <div class="pinfo-text">WiFi rápido y estable (filtro #1), espacio de trabajo cómodo, zona segura para salir de noche, barrio con cafeterías. No quiere contratos largos ni trámites.</div>
+      </div>
+      <div>
+        <div class="pinfo-label">Dónde lo encontrás</div>
+        <div class="pinfo-text">Comunidades de nómadas digitales en Facebook e Instagram, grupos "expats en Lima", hashtags #digitalnomad #remotework #lima, Reddit r/digitalnomad.</div>
+      </div>
     </div>
 
-    <div class="pain-header p5h p5bd">
+    <div class="pain-header p5h p5bd" style="border-left:3px solid #C0406A">
       <span style="font-size:18px">📶</span>
       <span class="pain-title">Dolor 1 — No puede arriesgar WiFi malo ni falta de espacio de trabajo</span>
-      <span class="pain-badge" style="background:#FEF3C7;color:#92400E">Filtro técnico</span>
+      <span style="font-size:11px;color:#831843;background:#FCE7F3;padding:2px 9px;border-radius:100px">Filtro técnico</span>
     </div>
-    <p class="pain-desc">Para el nómada el WiFi no es un "extra" — es la condición mínima. Un alquiler sin internet confiable o sin escritorio es descartado de inmediato.</p>
+    <p class="pain-desc">Para el nómada, el WiFi no es un "extra" — es la condición mínima. Un alquiler sin internet confiable o sin escritorio es directamente descartado. Este creativo ataca ese filtro primero.</p>
 
     <div class="cgrid">
       <div class="ccard p5tp">
         <div class="cnum">Creativo 25</div>
-        <div class="pills-row"><span class="format-pill">🖼️ Imagen "setup"</span><span class="angle-pill a-ps">Problema–Solución</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"¿Tu próxima base en Lima tiene WiFi que aguante una videollamada?"</div>
-        <div class="flabel">Descripción visual</div><div class="fval">Foto del escritorio del depto o zona de trabajo iluminada. Badge o texto con velocidad de internet. Coworking del edificio en segundo plano.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">WiFi de alta velocidad + coworking en el edificio + escritorio en el depto. Para trabajar sin excusas desde Miraflores.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Preguntar por el internet →</span>
+        <span class="format-pill">🖼️ Imagen "setup perfecto"</span><span class="angle-pill a-ps">Problema–Solución</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"¿Tu próxima base en Lima tiene WiFi que aguante una videollamada?"</div>
+        <div class="flabel">Descripción visual</div>
+        <div class="fval">Foto del escritorio del depto o zona de trabajo iluminada. Badge o texto que indica velocidad de internet. Coworking del edificio en segundo plano. Tono técnico pero cálido.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">WiFi de alta velocidad + coworking en el edificio + escritorio en el depto. Para trabajar sin excusas desde Miraflores.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Preguntar por el internet →</span>
       </div>
       <div class="ccard p5tp">
         <div class="cnum">Creativo 26</div>
-        <div class="pills-row"><span class="format-pill">🎬 Reel día remoto</span><span class="angle-pill a-tm">Aspiracional</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Así es un día trabajando remoto desde el piso 9 de Miraflores."</div>
-        <div class="flabel">Descripción</div><div class="fval">Secuencia: mañana (café + laptop en balcón), mediodía (coworking del edificio), tarde (call con clientes), noche (piscina + malecón a 5 min). Vibe productivo y con calidad de vida. Música lo-fi.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Lima es mejor de lo que pensás para trabajar remoto. Y Miraflores es el mejor barrio para hacerlo.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Reservar por semana →</span>
+        <span class="format-pill">🎬 Reel "día de trabajo remoto"</span><span class="angle-pill a-tm">Aspiracional</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Así es un día trabajando remoto desde el piso 9 de Miraflores."</div>
+        <div class="flabel">Descripción</div>
+        <div class="fval">Secuencia: mañana (café + laptop en balcón), mediodía (coworking del edificio), tarde (call con clientes), noche (piscina + malecón a 5 min). Vibe productivo y con calidad de vida. Música lo-fi.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Lima es mejor de lo que pensás para trabajar remoto. Y Miraflores es el mejor barrio para hacerlo.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Reservar por semana →</span>
       </div>
     </div>
+
     <div class="ccard-wide p5tp">
       <div class="wide-header">
         <span class="cnum" style="margin:0">Creativo 27</span>
         <span class="format-pill">🎠 Carrusel "Por qué Lima"</span><span class="angle-pill a-ed">Educativo</span>
       </div>
       <div class="wide-body">
-        <div><div class="flabel">Hook — Slide 1</div><div class="hook-val">"Por qué cada vez más nómadas digitales eligen Lima (y Miraflores en particular)."</div></div>
-        <div><div class="flabel">Slides</div><div class="fval">Slide 2: Zona horaria EST-friendly. Slide 3: Gastronomía de clase mundial. Slide 4: Barrio seguro con cafeterías y coworkings. Slide 5: Internet bueno y costo de vida razonable vs. ciudades LATAM.</div></div>
-        <div><div class="flabel">Slide final + CTA</div><div class="fval">"Si te quedás en Av. Larco 791 — WiFi, coworking y piscina incluidos." Precio semanal con CTA.</div><span class="cta-btn" style="display:inline-block;margin-top:8px">Consultar estadía →</span></div>
+        <div>
+          <div class="flabel">Hook — Slide 1</div>
+          <div class="hook-val">"Por qué cada vez más nómadas digitales eligen Lima (y Miraflores en particular)."</div>
+        </div>
+        <div>
+          <div class="flabel">Slides</div>
+          <div class="fval">Slide 2: Zona horaria EST-friendly. Slide 3: Gastronomía de clase mundial. Slide 4: Barrio seguro con cafeterías y coworkings. Slide 5: Internet bueno y costo de vida razonable vs. ciudades LATAM.</div>
+        </div>
+        <div>
+          <div class="flabel">Slide final + CTA</div>
+          <div class="fval">"Si te quedás en Av. Larco 791 — WiFi, coworking y piscina incluidos." Precio semanal con CTA.</div>
+          <span class="cta-btn" style="margin-top:8px;display:inline-block">Consultar estadía →</span>
+        </div>
       </div>
     </div>
 
     <hr class="div"/>
 
-    <div class="pain-header p5h p5bd">
+    <div class="pain-header p5h p5bd" style="border-left:3px solid #C0406A">
       <span style="font-size:18px">📅</span>
       <span class="pain-title">Dolor 2 — No quiere contratos largos ni burocracia para 1 o 2 meses</span>
-      <span class="pain-badge" style="background:#D1FAE5;color:#065F46">Flexibilidad</span>
+      <span style="font-size:11px;color:#831843;background:#FCE7F3;padding:2px 9px;border-radius:100px">Flexibilidad</span>
     </div>
-    <p class="pain-desc">El nómada toma decisiones rápido. Un proceso de reserva lento o con muchos requisitos lo pierde. La promesa: confirmación en 5 minutos.</p>
+    <p class="pain-desc">El nómada toma decisiones rápido y se va si no le convence. Un proceso de reserva lento o con muchos requisitos lo pierde. La promesa: confirmación en 5 minutos.</p>
 
     <div class="cgrid">
       <div class="ccard p5tp">
         <div class="cnum">Creativo 28</div>
-        <div class="pills-row"><span class="format-pill">📱 UGC "llegué a Lima"</span><span class="angle-pill a-ug">Testimonial</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Llegué a Lima sin plan fijo. Encontré esto y me quedé un mes."</div>
-        <div class="flabel">Descripción</div><div class="fval">Persona habla a cámara, visiblemente de otro país. Cuenta que reservó por días y terminó extendiendo. Sin contratos, sin garante. Solo acordó por WhatsApp. Cierra: "Vale mucho más de lo que pagan."</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Flexible. Sin burocracia. Podés empezar por una semana y extender si querés.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Consultar estadía larga →</span>
+        <span class="format-pill">📱 UGC "llegué a Lima"</span><span class="angle-pill a-ug">Testimonial</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Llegué a Lima sin plan fijo. Encontré esto y me quedé un mes."</div>
+        <div class="flabel">Descripción</div>
+        <div class="fval">Persona habla a cámara, visiblemente de otro país. Cuenta que reservó por días y terminó extendiendo. Sin contratos, sin garante. Solo acordó por WhatsApp. Cierra: "Vale mucho más de lo que pagan."</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Flexible. Sin burocracia. Podés empezar por una semana y extender si querés.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Consultar estadía larga →</span>
       </div>
       <div class="ccard p5tp">
         <div class="cnum">Creativo 29</div>
-        <div class="pills-row"><span class="format-pill">🖼️ Imagen "sin letra chica"</span><span class="angle-pill a-ur">Urgencia</span></div>
-        <div class="flabel">Hook</div><div class="hook-val">"Alquilar este depto es más fácil de lo que pensás."</div>
-        <div class="flabel">Descripción visual</div><div class="fval">Diseño minimalista con 3 pasos: 1) Escribís por WhatsApp → 2) Acordamos fechas y precio → 3) Llegás y listo. Foto del depto de fondo.</div>
-        <div class="flabel">Mensaje central</div><div class="fval">Sin contrato largo. Sin garante. Sin agencia lenta. Solo un mensaje y te confirmamos.</div>
-        <div class="flabel">CTA</div><span class="cta-btn">Empezar con un mensaje</span>
+        <span class="format-pill">🖼️ Imagen "sin letra chica"</span><span class="angle-pill a-ur">Urgencia + Simplicidad</span>
+        <div class="flabel">Hook</div>
+        <div class="hook-val">"Alquilar este depto es más fácil de lo que pensás."</div>
+        <div class="flabel">Descripción visual</div>
+        <div class="fval">Diseño minimalista con 3 pasos: 1) Escribís por WhatsApp → 2) Acordamos fechas y precio → 3) Llegás y listo. Foto del depto de fondo con overlay cálido.</div>
+        <div class="flabel">Mensaje central</div>
+        <div class="fval">Sin contrato largo. Sin garante. Sin agencia lenta. Solo un mensaje y te confirmamos.</div>
+        <div class="flabel">CTA</div>
+        <span class="cta-btn">Empezar con un mensaje</span>
       </div>
     </div>
+
     <div class="ccard-wide p5tp">
       <div class="wide-header">
         <span class="cnum" style="margin:0">Creativo 30</span>
-        <span class="format-pill">🎬 Reel proceso reserva</span><span class="angle-pill a-ed">Educativo</span>
+        <span class="format-pill">🎬 Reel "cómo se reserva"</span><span class="angle-pill a-ed">Educativo / Proceso</span>
       </div>
       <div class="wide-body">
-        <div><div class="flabel">Hook</div><div class="hook-val">"¿Cómo se alquila un depto temporal en Lima sin complicaciones? Así."</div></div>
-        <div><div class="flabel">Estructura</div><div class="fval">3 pantallas rápidas: Pantalla de WhatsApp → Fotos del depto → Check-in. Ritmo ágil, texto corto en cada paso. Sensación de proceso de 5 minutos.</div></div>
-        <div><div class="flabel">Cierre + CTA</div><div class="fval">"Disponible por días, semanas o meses. Miraflores, Av. Larco." Logo Llacta con número de WhatsApp visible.</div><span class="cta-btn" style="display:inline-block;margin-top:8px">Escribinos →</span></div>
+        <div>
+          <div class="flabel">Hook</div>
+          <div class="hook-val">"¿Cómo se alquila un depto temporal en Lima sin complicaciones? Así."</div>
+        </div>
+        <div>
+          <div class="flabel">Estructura</div>
+          <div class="fval">3 pantallas rápidas: Pantalla de WhatsApp → Fotos del depto → Check-in. Ritmo ágil, texto corto en cada paso. Sensación de proceso de 5 minutos.</div>
+        </div>
+        <div>
+          <div class="flabel">Cierre + CTA</div>
+          <div class="fval">"Disponible por días, semanas o meses. Miraflores, Av. Larco." Logo Llacta al final con número de WhatsApp visible.</div>
+          <span class="cta-btn" style="margin-top:8px;display:inline-block">Escribinos →</span>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
 
-<!-- ═══ TABLA ═══ -->
+
+<!-- ══════════════════════════════
+     TABLA RESUMEN
+══════════════════════════════ -->
 <section id="tabla" class="table-section">
   <div class="eyebrow">Mapa de Producción</div>
   <h2 class="section-h">Tabla Resumen — 30 Creativos</h2>
-  <p class="section-desc" style="margin-bottom:24px">Persona × Dolor × Formato × Ángulo para planificar la producción semanal y asignar recursos.</p>
+  <p class="section-desc" style="margin-bottom:24px">Persona × Dolor × Formato × Ángulo. Usá esta tabla para planificar la producción semanal y asignar recursos.</p>
+
   <div class="table-wrap">
     <table>
-      <thead><tr><th>#</th><th>Persona</th><th>Dolor</th><th>Formato</th><th>Ángulo</th><th>Ángulo Meta</th></tr></thead>
+      <thead>
+        <tr>
+          <th>#</th><th>Persona</th><th>Dolor</th><th>Formato</th><th>Ángulo</th><th>Ángulo Meta</th><th>Estado</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td><strong>C1</strong></td><td>💑 Pareja</td><td>Rutina sin romance</td><td>🎬 Reel 15–20s</td><td><span class="ta a-ps">Problema–Solución</span></td><td>Ángulo 1</td></tr>
-        <tr><td><strong>C2</strong></td><td>💑 Pareja</td><td>Rutina sin romance</td><td>🖼️ Imagen estática</td><td><span class="ta a-ur">Urgencia</span></td><td>Ángulo 1</td></tr>
-        <tr><td><strong>C3</strong></td><td>💑 Pareja</td><td>Rutina sin romance</td><td>🎠 Carrusel</td><td><span class="ta a-tm">Aspiracional</span></td><td>Ángulo 1</td></tr>
-        <tr><td><strong>C4</strong></td><td>💑 Pareja</td><td>Hotel caro / Airbnb malo</td><td>📱 UGC selfie</td><td><span class="ta a-ug">Testimonial</span></td><td>Ángulo 1</td></tr>
-        <tr><td><strong>C5</strong></td><td>💑 Pareja</td><td>Hotel caro / Airbnb malo</td><td>🖼️ Imagen comparativa</td><td><span class="ta a-cp">Comparación</span></td><td>Ángulo 1</td></tr>
-        <tr><td><strong>C6</strong></td><td>💑 Pareja</td><td>Hotel caro / Airbnb malo</td><td>🎬 Reel educativo</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 1</td></tr>
-        <tr><td><strong>C7</strong></td><td>💼 Ejecutivo</td><td>Hotel sin cocina ni espacio</td><td>🎬 Reel POV</td><td><span class="ta a-tm">Aspiracional</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C8</strong></td><td>💼 Ejecutivo</td><td>Hotel sin cocina ni espacio</td><td>🖼️ Imagen editorial</td><td><span class="ta a-ps">Problema–Solución</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C9</strong></td><td>💼 Ejecutivo</td><td>Hotel sin cocina ni espacio</td><td>🎠 Carrusel checklist</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C10</strong></td><td>💼 Ejecutivo</td><td>Caos para encontrar alquiler</td><td>📱 UGC review</td><td><span class="ta a-ug">Testimonial</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C11</strong></td><td>💼 Ejecutivo</td><td>Caos para encontrar alquiler</td><td>🖼️ Imagen directa</td><td><span class="ta a-ur">Urgencia</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C12</strong></td><td>💼 Ejecutivo</td><td>Caos para encontrar alquiler</td><td>🎬 Reel comparativo</td><td><span class="ta a-cp">Comparación</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C13</strong></td><td>👨‍👩‍👧 Familia</td><td>Sin dónde quedarse</td><td>🎬 Reel narrativo</td><td><span class="ta a-ps">Problema–Solución</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C14</strong></td><td>👨‍👩‍👧 Familia</td><td>Sin dónde quedarse</td><td>🎠 Carrusel beneficios</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C15</strong></td><td>👨‍👩‍👧 Familia</td><td>Sin dónde quedarse</td><td>🖼️ Imagen checklist</td><td><span class="ta a-ur">Urgencia práctica</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C16</strong></td><td>👨‍👩‍👧 Familia</td><td>Miedo a informalidad</td><td>📱 UGC recorrido</td><td><span class="ta a-ug">Testimonial</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C17</strong></td><td>👨‍👩‍👧 Familia</td><td>Miedo a informalidad</td><td>🎬 Reel educativo</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C18</strong></td><td>👨‍👩‍👧 Familia</td><td>Miedo a informalidad</td><td>🖼️ Imagen garantías</td><td><span class="ta a-cp">Comparación implícita</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C19</strong></td><td>✈️ Turista</td><td>No sabe dónde quedarse</td><td>🎬 Reel mapa a pie</td><td><span class="ta a-tm">Aspiracional</span></td><td>Ángulo 2</td></tr>
-        <tr><td><strong>C20</strong></td><td>✈️ Turista</td><td>No sabe dónde quedarse</td><td>🎠 Carrusel "tu semana"</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 2</td></tr>
-        <tr><td><strong>C21</strong></td><td>✈️ Turista</td><td>No sabe dónde quedarse</td><td>🖼️ Lifestyle Miraflores</td><td><span class="ta a-ps">Problema–Solución</span></td><td>Ángulo 2</td></tr>
-        <tr><td><strong>C22</strong></td><td>✈️ Turista</td><td>Hotel caro / Airbnb dudoso</td><td>📱 UGC recorrido</td><td><span class="ta a-ug">Testimonial</span></td><td>Ángulo 2</td></tr>
-        <tr><td><strong>C23</strong></td><td>✈️ Turista</td><td>Hotel caro / Airbnb dudoso</td><td>🎬 Reel noche Miraflores</td><td><span class="ta a-tm">Aspiracional</span></td><td>Ángulo 2</td></tr>
-        <tr><td><strong>C24</strong></td><td>✈️ Turista</td><td>Hotel caro / Airbnb dudoso</td><td>🖼️ Precio vs. calidad</td><td><span class="ta a-cp">Comparación</span></td><td>Ángulo 2</td></tr>
-        <tr><td><strong>C25</strong></td><td>💻 Nómada</td><td>WiFi malo / sin escritorio</td><td>🖼️ Imagen "setup"</td><td><span class="ta a-ps">Problema–Solución</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C26</strong></td><td>💻 Nómada</td><td>WiFi malo / sin escritorio</td><td>🎬 Reel día remoto</td><td><span class="ta a-tm">Aspiracional</span></td><td>Ángulo 2+3</td></tr>
-        <tr><td><strong>C27</strong></td><td>💻 Nómada</td><td>WiFi malo / sin escritorio</td><td>🎠 Carrusel "Por qué Lima"</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 2</td></tr>
-        <tr><td><strong>C28</strong></td><td>💻 Nómada</td><td>No quiere contratos largos</td><td>📱 UGC "llegué a Lima"</td><td><span class="ta a-ug">Testimonial</span></td><td>Ángulo 3</td></tr>
-        <tr><td><strong>C29</strong></td><td>💻 Nómada</td><td>No quiere contratos largos</td><td>🖼️ Imagen "sin letra chica"</td><td><span class="ta a-ur">Urgencia</span></td><td>Ángulo 3</td></tr>
+        <tr style="background:#FFFDF0"><td><strong>C1</strong></td><td>💑 Pareja</td><td>Rutina sin romance</td><td>🎬 Reel 15–20s</td><td><span class="ta a-ps">Problema–Solución</span></td><td>Ángulo 1</td><td><span class="ts-prod">🎬 En producción</span></td></tr>
+        <tr><td><strong>C2</strong></td><td>💑 Pareja</td><td>Rutina sin romance</td><td>🖼️ Imagen estática</td><td><span class="ta a-ur">Urgencia</span></td><td>Ángulo 1</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C3</strong></td><td>💑 Pareja</td><td>Rutina sin romance</td><td>🎠 Carrusel</td><td><span class="ta a-tm">Aspiracional</span></td><td>Ángulo 1</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C4</strong></td><td>💑 Pareja</td><td>Hotel caro / Airbnb malo</td><td>📱 UGC selfie</td><td><span class="ta a-ug">Testimonial</span></td><td>Ángulo 1</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C5</strong></td><td>💑 Pareja</td><td>Hotel caro / Airbnb malo</td><td>🖼️ Imagen comparativa</td><td><span class="ta a-cp">Comparación</span></td><td>Ángulo 1</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C6</strong></td><td>💑 Pareja</td><td>Hotel caro / Airbnb malo</td><td>🎬 Reel educativo</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 1</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr style="background:#FFFDF0"><td><strong>C7</strong></td><td>💼 Ejecutivo</td><td>Hotel sin cocina ni espacio</td><td>🎬 Reel POV</td><td><span class="ta a-tm">Aspiracional</span></td><td>Ángulo 3</td><td><span class="ts-prod">🎬 En producción</span></td></tr>
+        <tr><td><strong>C8</strong></td><td>💼 Ejecutivo</td><td>Hotel sin cocina ni espacio</td><td>🖼️ Imagen editorial</td><td><span class="ta a-ps">Problema–Solución</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C9</strong></td><td>💼 Ejecutivo</td><td>Hotel sin cocina ni espacio</td><td>🎠 Carrusel checklist</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C10</strong></td><td>💼 Ejecutivo</td><td>Caos para encontrar alquiler</td><td>📱 UGC review</td><td><span class="ta a-ug">Testimonial</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C11</strong></td><td>💼 Ejecutivo</td><td>Caos para encontrar alquiler</td><td>🖼️ Imagen directa</td><td><span class="ta a-ur">Urgencia</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C12</strong></td><td>💼 Ejecutivo</td><td>Caos para encontrar alquiler</td><td>🎬 Reel comparativo</td><td><span class="ta a-cp">Comparación</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C13</strong></td><td>👨‍👩‍👧 Familia</td><td>Sin dónde quedarse</td><td>🎬 Reel narrativo</td><td><span class="ta a-ps">Problema–Solución</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C14</strong></td><td>👨‍👩‍👧 Familia</td><td>Sin dónde quedarse</td><td>🎠 Carrusel beneficios</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C15</strong></td><td>👨‍👩‍👧 Familia</td><td>Sin dónde quedarse</td><td>🖼️ Imagen checklist</td><td><span class="ta a-ur">Urgencia práctica</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C16</strong></td><td>👨‍👩‍👧 Familia</td><td>Miedo a informalidad</td><td>📱 UGC recorrido</td><td><span class="ta a-ug">Testimonial</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C17</strong></td><td>👨‍👩‍👧 Familia</td><td>Miedo a informalidad</td><td>🎬 Reel educativo</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C18</strong></td><td>👨‍👩‍👧 Familia</td><td>Miedo a informalidad</td><td>🖼️ Imagen garantías</td><td><span class="ta a-cp">Comparación implícita</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr style="background:#FFFDF0"><td><strong>C19</strong></td><td>✈️ Turista</td><td>No sabe dónde quedarse</td><td>🎬 Reel mapa a pie</td><td><span class="ta a-tm">Aspiracional</span></td><td>Ángulo 2</td><td><span class="ts-prod">🎬 En producción</span></td></tr>
+        <tr><td><strong>C20</strong></td><td>✈️ Turista</td><td>No sabe dónde quedarse</td><td>🎠 Carrusel "tu semana"</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 2</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C21</strong></td><td>✈️ Turista</td><td>No sabe dónde quedarse</td><td>🖼️ Lifestyle Miraflores</td><td><span class="ta a-ps">Problema–Solución</span></td><td>Ángulo 2</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C22</strong></td><td>✈️ Turista</td><td>Hotel caro / Airbnb dudoso</td><td>📱 UGC recorrido</td><td><span class="ta a-ug">Testimonial</span></td><td>Ángulo 2</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C23</strong></td><td>✈️ Turista</td><td>Hotel caro / Airbnb dudoso</td><td>🎬 Reel noche Miraflores</td><td><span class="ta a-tm">Aspiracional</span></td><td>Ángulo 2</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C24</strong></td><td>✈️ Turista</td><td>Hotel caro / Airbnb dudoso</td><td>🖼️ Precio vs. calidad</td><td><span class="ta a-cp">Comparación</span></td><td>Ángulo 2</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C25</strong></td><td>💻 Nómada</td><td>WiFi malo / sin escritorio</td><td>🖼️ Imagen "setup"</td><td><span class="ta a-ps">Problema–Solución</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C26</strong></td><td>💻 Nómada</td><td>WiFi malo / sin escritorio</td><td>🎬 Reel día remoto</td><td><span class="ta a-tm">Aspiracional</span></td><td>Ángulo 2+3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C27</strong></td><td>💻 Nómada</td><td>WiFi malo / sin escritorio</td><td>🎠 Carrusel "Por qué Lima"</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 2</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C28</strong></td><td>💻 Nómada</td><td>No quiere contratos largos</td><td>📱 UGC "llegué a Lima"</td><td><span class="ta a-ug">Testimonial</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
+        <tr><td><strong>C29</strong></td><td>💻 Nómada</td><td>No quiere contratos largos</td><td>🖼️ Imagen "sin letra chica"</td><td><span class="ta a-ur">Urgencia</span></td><td>Ángulo 3</td><td><span class="ts-pend">⏳ Pendiente</span></td></tr>
         <tr><td><strong>C30</strong></td><td>💻 Nómada</td><td>No quiere contratos largos</td><td>🎬 Reel proceso reserva</td><td><span class="ta a-ed">Educativo</span></td><td>Ángulo 3</td></tr>
       </tbody>
     </table>
   </div>
+
   <div class="legend">
-    <span class="legend-lbl">Ángulos:</span>
+    <span class="legend-label">Ángulos:</span>
     <span class="ta a-ps">Problema–Solución</span>
     <span class="ta a-tm">Aspiracional</span>
     <span class="ta a-ug">Testimonial UGC</span>
@@ -706,18 +1222,30 @@ footer{padding:28px 24px;text-align:center;font-size:12px;color:#8C6030;border-t
     <span class="ta a-cp">Comparación</span>
     <span class="ta a-ur">Urgencia</span>
   </div>
+  <div class="legend" style="margin-top:10px">
+    <span class="legend-label">Estados:</span>
+    <span class="status s-prod">🎬 En producción · Tanda 1</span>
+    <span class="status s-pend" style="background:#F1F5F9;color:#94A3B8;border:1.5px solid #CBD5E1">⏳ Pendiente</span>
+    <span class="status s-done" style="background:#DCFCE7;color:#166534;border:1.5px solid #86EFAC">✅ Listo / Publicado</span>
+  </div>
 </section>
 
 </div>
-<footer>Llacta Inmobiliaria · Estrategia Meta Ads — Depto Av. Larco 791, Miraflores · Elaborado por equipo de marketing digital</footer>
+
+<footer>
+  Llacta Inmobiliaria · Estrategia Meta Ads — Departamento Av. Larco 791, Miraflores · Elaborado por equipo de marketing digital
+</footer>
 
 <script>
-const ids=['p1','p2','p3','p4','p5','tabla'];
-const tabs=document.querySelectorAll('.nav-tab');
-window.addEventListener('scroll',()=>{
-  let cur='';
-  ids.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<100)cur=id;});
-  tabs.forEach(t=>t.classList.toggle('active',t.getAttribute('href')==='#'+cur));
+const ids = ['p1','p2','p3','p4','p5','tabla'];
+const tabs = document.querySelectorAll('.nav-tab');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top < 100) cur = id;
+  });
+  tabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === '#' + cur));
 });
 </script>
 </body>
