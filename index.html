@@ -376,6 +376,7 @@ footer {
 <!-- NAV -->
 <nav class="sticky-nav">
   <div class="nav-inner">
+    <a class="nav-tab active" href="#resumen">📊 Resumen</a>
     <a class="nav-tab" href="#p1">P1 — Pareja</a>
     <a class="nav-tab" href="#p2">P2 — Ejecutivo</a>
     <a class="nav-tab" href="#p3">P3 — Familia</a>
@@ -388,6 +389,125 @@ footer {
 </nav>
 
 <div class="container">
+
+<!-- ═══ RESUMEN EJECUTIVO ═══ -->
+<section id="resumen" style="padding:52px 0 48px">
+  <div class="eyebrow">Campaña activa · Tanda 1</div>
+  <h2 class="section-h">Resumen Ejecutivo</h2>
+  <p class="section-desc" style="margin-bottom:32px">Estado actual de la campaña Meta Ads — Departamento Miraflores. Objetivo: Mensajes a WhatsApp.</p>
+
+  <style>
+    .resumen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px}
+    @media(max-width:640px){.resumen-grid{grid-template-columns:1fr}}
+    .stat-card{background:#FFFFFF;border:1px solid #E0CDB0;border-radius:10px;padding:20px 22px;text-align:center}
+    .stat-num{font-family:'DM Serif Display',serif;font-size:32px;color:#7C4A1E;line-height:1.1;margin-bottom:4px}
+    .stat-label{font-size:12px;color:#8C6030;font-weight:500}
+    .anuncio-card{background:#FFFFFF;border:1px solid #E0CDB0;border-radius:10px;overflow:hidden;margin-bottom:14px}
+    .anuncio-header{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid #F0E4D0}
+    .anuncio-title{font-size:14px;font-weight:600;color:#2C2418}
+    .anuncio-badges{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .badge-pub{background:#DCFCE7;color:#166534;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;border:1px solid #86EFAC}
+    .badge-prog{background:#DBEAFE;color:#1E4E7A;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;border:1px solid #93C5FD}
+    .anuncio-body{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .anuncio-meta{font-size:13px;color:#6B5740;line-height:1.6}
+    .anuncio-link{display:inline-flex;align-items:center;gap:6px;background:#7C4A1E;color:#FBF8F4;padding:8px 16px;border-radius:6px;font-size:12.5px;font-weight:600;text-decoration:none;transition:opacity .2s}
+    .anuncio-link:hover{opacity:.85}
+  </style>
+
+  <!-- STATS -->
+  <div class="resumen-grid">
+    <div class="stat-card">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Creativos publicados</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Perfiles de audiencia</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">S/25</div>
+      <div class="stat-label">Presupuesto diario</div>
+    </div>
+  </div>
+
+  <!-- ANUNCIOS -->
+  <div class="eyebrow" style="margin-bottom:16px">Creativos publicados</div>
+
+  <!-- C1 v1 y v2 -->
+  <div class="anuncio-card">
+    <div class="anuncio-header">
+      <div>
+        <div class="anuncio-title">💑 C1 — Pareja · 2 versiones</div>
+      </div>
+      <div class="anuncio-badges">
+        <span class="badge-pub">✅ Publicado</span>
+        <span style="font-size:11px;color:#8C6030">Test A/B · 2 avatares</span>
+      </div>
+    </div>
+    <div class="anuncio-body">
+      <div class="anuncio-meta">
+        🎬 Reel UGC · 37s · Ángulo romántico<br>
+        🎯 Parejas 28–42 · Lima Metropolitana<br>
+        💰 Desde S/280 la noche
+      </div>
+      <a class="anuncio-link" href="https://www.facebook.com/61576892229781/posts/122182317644896407/" target="_blank">Ver anuncio en Facebook ↗</a>
+    </div>
+  </div>
+
+  <!-- C7 -->
+  <div class="anuncio-card">
+    <div class="anuncio-header">
+      <div>
+        <div class="anuncio-title">💼 C7 — Ejecutivo / Extranjero</div>
+      </div>
+      <div class="anuncio-badges">
+        <span class="badge-pub">✅ Publicado</span>
+        <span style="font-size:11px;color:#8C6030">Tono premium · Voz en off</span>
+      </div>
+    </div>
+    <div class="anuncio-body">
+      <div class="anuncio-meta">
+        🎬 Reel tour del depto · 29s · Ángulo aspiracional<br>
+        🎯 Ejecutivos y extranjeros · Lima<br>
+        📅 Disponible por días, semanas o mes completo
+      </div>
+      <a class="anuncio-link" href="https://www.facebook.com/61576892229781/posts/122182317668896407/" target="_blank">Ver anuncio en Facebook ↗</a>
+    </div>
+  </div>
+
+  <!-- C19 -->
+  <div class="anuncio-card">
+    <div class="anuncio-header">
+      <div>
+        <div class="anuncio-title">✈️ C19 — Turista / Viajero</div>
+      </div>
+      <div class="anuncio-badges">
+        <span class="badge-pub">✅ Publicado</span>
+        <span style="font-size:11px;color:#8C6030">Formato híbrido · Animación + real</span>
+      </div>
+    </div>
+    <div class="anuncio-body">
+      <div class="anuncio-meta">
+        🎬 Reel animado + tomas reales · 33s · Ángulo ubicación<br>
+        🎯 Turistas y viajeros · Nacional e internacional<br>
+        🗺️ Kennedy 2 min · Larcomar 3 min · Malecón 5 min
+      </div>
+      <a class="anuncio-link" href="https://www.facebook.com/61576892229781/posts/122182317656896407/" target="_blank">Ver anuncio en Facebook ↗</a>
+    </div>
+  </div>
+
+  <!-- PRÓXIMOS PASOS -->
+  <div style="background:#F5EFE6;border:1px solid #E0CDB0;border-radius:10px;padding:20px 24px;margin-top:8px">
+    <div class="eyebrow" style="margin-bottom:10px">Próximos pasos</div>
+    <div style="font-size:13.5px;color:#5C4030;line-height:1.8">
+      ⏳ Monitorear resultados durante 7 días sin modificar nada<br>
+      📊 Evaluar costo por conversación iniciada en WhatsApp<br>
+      🏆 Identificar el creativo ganador y escalar presupuesto<br>
+      🎬 Preparar Tanda 2 según resultados del test
+    </div>
+  </div>
+
+</section>
 
 <!-- ══════════════════════════════
      PERSONA 1 — PAREJA
@@ -1555,7 +1675,7 @@ function copyText(id, btn) {
 </footer>
 
 <script>
-const ids = ['p1','p2','p3','p4','p5','produccion','copies','tabla'];
+const ids = ['resumen','p1','p2','p3','p4','p5','produccion','copies','tabla'];
 const tabs = document.querySelectorAll('.nav-tab');
 window.addEventListener('scroll', () => {
   let cur = '';
